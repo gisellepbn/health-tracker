@@ -1,0 +1,27 @@
+@use '../abstracts/abstracts' as *;
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	background-color: $navy;
+	padding: $small 3rem;
+
+	.logo {
+		color: $white;
+		opacity: 80%;
+	}
+
+	&__items {
+		display: flex;
+		gap: $small;
+
+		a {
+			color: $white;
+			opacity: 80%;
+		}
+
+		#sign-up {
+			color: $pink;
+		}
+	}
+}
