@@ -15,7 +15,7 @@ class Profile(AbstractUser):
         return self.username
 
 
-class Plan:
+class Plan(models.Model):
 
     CATEGORIES = [
          ('Nutrition', 'Nutrition'),
