@@ -39,3 +39,8 @@ def sign_up(request):
 @login_required
 def account(request):
     return render(request, 'plans/account.html')
+
+
+def log_out(request):
+     logout(request)
+     return redirect("index")

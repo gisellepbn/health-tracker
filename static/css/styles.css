@@ -102,6 +102,9 @@ p {
 .navbar__items #sign-up:hover {
   text-decoration: underline;
 }
+.navbar__items #log-out:hover {
+  text-decoration: underline;
+}
 @media screen and (max-width: 750px) {
   .navbar__items #sign-in {
     font-size: 0.8rem;

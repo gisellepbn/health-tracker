@@ -36,6 +36,12 @@
 			}
 		}
 
+		#log-out {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
 		@media screen and (max-width: 750px) {
 			#sign-in {
 				font-size: 0.8rem;

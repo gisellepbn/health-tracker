@@ -4,7 +4,9 @@
 		<ul class="navbar__items">
 			{% if request.user.is_authenticated %}
 			<li class="navbar__item">
-				<a href="" class="navbar__link">Log Out</a>
+				<a href="{% url 'log_out' %}" id="log-out" class="navbar__link"
+					>Log Out</a
+				>
 			</li>
 			{% else %}
 			<li class="navbar__item">
