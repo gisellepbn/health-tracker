@@ -5,7 +5,7 @@ html {
 body {
   overflow-x: hidden;
   font-family: "Inter", sans-serif;
-  background-color: white;
+  background-color: #f5f5f5;
   color: #f5f5f5;
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
@@ -30,11 +30,11 @@ h1,
 h2,
 h3 {
   font-weight: 700;
-  opacity: 80%;
+  color: #2f2e41;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 h2 {
@@ -56,7 +56,7 @@ p {
   line-height: 1.5rem;
   margin-top: 1rem;
   font-size: 1rem;
-  opacity: 80%;
+  color: #2f2e41;
 }
 
 * {
@@ -73,23 +73,180 @@ p {
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #150050;
-  padding: 1rem 3rem;
+  padding: 1rem 5rem;
+  height: 8vh;
 }
 .navbar .logo {
-  color: white;
-  opacity: 80%;
+  color: #f5f5f5;
+}
+.navbar .logo:hover {
+  color: #fb2576;
 }
 .navbar__items {
   display: flex;
   gap: 1rem;
 }
-.navbar__items a {
-  color: white;
-  opacity: 80%;
+.navbar__items #sign-in {
+  color: #f5f5f5;
+}
+.navbar__items #sign-in:hover {
+  color: #fb2576;
+  text-decoration: underline;
 }
 .navbar__items #sign-up {
   color: #fb2576;
+}
+.navbar__items #sign-up:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 750px) {
+  .navbar__items #sign-in {
+    font-size: 0.8rem;
+    padding-right: 0;
+  }
+  .navbar__items #sign-up {
+    display: none;
+  }
+}
+
+.btn {
+  font-size: 1rem;
+  color: white;
+  opacity: 80%;
+  background-color: #fb2576;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #3f0071;
+}
+
+.grid {
+  height: 100vh;
+}
+.grid .hero-section {
+  display: flex;
+  flex-direction: "row";
+  height: 60vh;
+}
+.grid .hero-section__text {
+  width: 50%;
+  justify-self: flex-end;
+  align-self: center;
+  padding-left: 5rem;
+  padding-right: 2rem;
+}
+.grid .hero-section__text .hero__title {
+  font-size: 3rem;
+  color: #150050;
+}
+.grid .hero-section__text .hero__subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  opacity: 80%;
+  max-width: 90%;
+}
+@media screen and (max-width: 960px) {
+  .grid .hero-section__text {
+    padding-right: 0;
+  }
+  .grid .hero-section__text .hero__title {
+    font-size: 2rem;
+  }
+  .grid .hero-section__text .hero__subtitle {
+    font-size: 1.2rem;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .grid .hero-section__text {
+    width: 100%;
+    padding-right: 5rem;
+  }
+  .grid .hero-section__text .hero__title {
+    font-size: 1.5rem;
+  }
+  .grid .hero-section__text .hero__subtitle {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .grid .hero-section__text #cta-btn {
+    font-size: 0.8rem;
+  }
+}
+.grid .hero-section__image {
+  width: 50%;
+}
+@media screen and (max-width: 960px) {
+  .grid .hero-section__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.grid .hero-section__image .image-container {
+  margin-top: 2rem;
+  margin-left: 5rem;
+  position: relative;
+  z-index: 2;
+}
+.grid .hero-section__image .image-container .hero-image {
+  width: 80%;
+  height: 80%;
+}
+@media screen and (max-width: 960px) {
+  .grid .hero-section__image .image-container {
+    margin-right: 4rem;
+  }
+  .grid .hero-section__image .image-container .hero-image {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .grid .hero-section__image .image-container {
+    display: none;
+  }
+}
+@media screen and (max-width: 750px) {
+  .grid .hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.grid .footer {
+  width: 100%;
+  height: 32vh;
+  display: flex;
+  overflow: hidden;
+}
+.grid .footer .left-skewed {
+  width: 50%;
+  height: 100%;
+  background-color: #3f0071;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transform: skewY(10deg);
+  transform-origin: top left;
+}
+.grid .footer .right-skewed {
+  width: 50%;
+  height: 100%;
+  background-color: #3f0071;
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 0;
+  transform: skewY(-10deg);
+  transform-origin: top right;
 }
 
 /*# sourceMappingURL=styles.css.map */

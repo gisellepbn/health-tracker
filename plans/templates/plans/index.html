@@ -1,3 +1,38 @@
-{% extends 'base.html' %} {% block title %}
+{% extends 'base.html' %} {% load static %} {% block title %}
 <title>Health Tracker</title>
-{% endblock title %}
+{% endblock title %} {% block content %}
+
+<div class="grid">
+	{% include 'navbar.html' %}
+	<main>
+		<div class="hero-section">
+			<div class="hero-section__text">
+				<h1 class="hero__title">Monitor Your Health</h1>
+				<p class="hero__subtitle">
+					Track your nutrition, water intake, exercise and sleep. Set daily
+					goals! Check your weekly progress.
+				</p>
+
+				<button id="cta-btn" class="btn">Sign Up</button>
+			</div>
+
+			<div class="hero-section__image">
+				<div class="image-container">
+					<img
+						class="hero-image"
+						src="{% static 'images/hero_image.svg' %}"
+						alt="image of people drinking water, eating and running and a clock" />
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<div class="footer">
+			<div class="left-skewed"></div>
+			<div class="right-skewed"></div>
+		</div>
+	</footer>
+</div>
+
+{% endblock content %}

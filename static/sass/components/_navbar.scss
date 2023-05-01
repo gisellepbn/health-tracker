@@ -3,25 +3,47 @@
 .navbar {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	background-color: $navy;
-	padding: $small 3rem;
+	padding: $small 5rem;
+	height: 8vh;
 
 	.logo {
-		color: $white;
-		opacity: 80%;
+		color: $light-gray;
+
+		&:hover {
+			color: $pink;
+		}
 	}
 
 	&__items {
 		display: flex;
 		gap: $small;
 
-		a {
-			color: $white;
-			opacity: 80%;
+		#sign-in {
+			color: $light-gray;
+			&:hover {
+				color: $pink;
+				text-decoration: underline;
+			}
 		}
 
 		#sign-up {
 			color: $pink;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		@media screen and (max-width: 750px) {
+			#sign-in {
+				font-size: 0.8rem;
+				padding-right: 0;
+			}
+			#sign-up {
+				display: none;
+			}
 		}
 	}
 }

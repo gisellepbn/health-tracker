@@ -4,7 +4,7 @@ h1,
 h2,
 h3 {
 	font-weight: $font-bold;
-	opacity: 80%;
+	color: $dark-gray;
 }
 
 h1 {
@@ -30,5 +30,5 @@ p {
 	line-height: $line-height;
 	margin-top: $small;
 	font-size: $small;
-	opacity: 80%;
+	color: $dark-gray;
 }

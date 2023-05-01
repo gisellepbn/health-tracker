@@ -1,0 +1,19 @@
+<nav class="navbar">
+	<a href="{% url 'index' %}" class="logo">HealthTracker</a>
+	<div class="navbar__menu">
+		<ul class="navbar__items">
+			{% if request.user.is_authenticated %}
+			<li class="navbar__item">
+				<a href="" class="navbar__link">Log Out</a>
+			</li>
+			{% else %}
+			<li class="navbar__item">
+				<a href="" id="sign-in" class="navbar__link">Sign In</a>
+			</li>
+			<li class="navbar__item">
+				<a href="" id="sign-up" class="navbar__link">Sign Up</a>
+			</li>
+			{% endif %}
+		</ul>
+	</div>
+</nav>

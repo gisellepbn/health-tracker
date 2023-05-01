@@ -25,6 +25,11 @@ $border-radius: 5px;
 $box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 // Sizes
-$big: 2rem;
+$big: 2.5rem;
 $medium: 1.5rem;
 $small: 1rem;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 960px;
+$breakpoint-laptop: 1024px;

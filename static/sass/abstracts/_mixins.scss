@@ -1,1 +1,6 @@
 @use 'variables' as *;
+
+@mixin flex($direction) {
+	display: flex;
+	flex-direction: $direction;
+}
