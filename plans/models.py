@@ -1,11 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+import uuid
 
 
 class Profile(AbstractUser):
 
+    id = models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True, editable=False)
     name = models.CharField(max_length=100)
-    profile_picture = models.ImageField(null=True, upload_to='profile/')
+    profile_picture = models.ImageField(blank=True,null=True, upload_to='profile/')
+    created = models.DateTimeField(auto_now_add= True, editable=False)
 
     class Meta:
         ordering = ['name']
@@ -13,7 +16,6 @@ class Profile(AbstractUser):
     
     def __str__(self):
         return self.username
-
 
 class Plan(models.Model):
 
@@ -24,6 +26,7 @@ class Plan(models.Model):
          ('Sleep', 'Sleep')
     ]
 
+    id = models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True, editable=False)
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     date = models.DateField()
     category = models.CharField(max_length=100, choices=CATEGORIES)

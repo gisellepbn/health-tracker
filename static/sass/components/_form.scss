@@ -1,0 +1,50 @@
+@use '../abstracts/abstracts' as *;
+
+.form {
+	width: 25%;
+	margin: 5rem auto;
+	background-color: $purple;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+
+	h3,
+	p {
+		color: $light-gray;
+	}
+
+	.form-title {
+		font-weight: $font-light;
+		font-size: 1.5em;
+	}
+
+	.form-btn {
+		width: 100%;
+		text-align: center;
+
+		&:hover {
+			background-color: $navy;
+		}
+	}
+
+	.input {
+		font-weight: $font-thin;
+		padding: 0.5rem;
+		border-radius: $border-radius;
+		border: solid 1px $light-gray;
+		outline-color: $light-gray;
+		box-shadow: $box-shadow;
+		background-color: $purple;
+		color: $white;
+
+		&::placeholder {
+			color: $light-gray;
+			font-weight: $font-thin;
+		}
+	}
+
+	#picture {
+		padding-top: 0;
+		padding-bottom: 1.5rem;
+	}
+}
