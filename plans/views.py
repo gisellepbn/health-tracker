@@ -55,11 +55,7 @@ def sign_in(request):
         username = request.POST['username'].lower()
         password = request.POST['password']
 
-        print(username, password)
-
         profile = authenticate(request, username=username, password=password)
-
-        print('profile', profile)
           
         if profile is not None:
             login(request, profile)
