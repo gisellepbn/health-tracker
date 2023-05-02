@@ -8,6 +8,14 @@
 	flex-direction: column;
 	gap: 1.5rem;
 
+	@media screen and (max-width: $breakpoint-laptop) {
+		width: 40%;
+	}
+
+	@media screen and (max-width: $breakpoint-mobile) {
+		width: 65%;
+	}
+
 	h3,
 	p {
 		color: $light-gray;
