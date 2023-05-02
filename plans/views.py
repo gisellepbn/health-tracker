@@ -3,6 +3,7 @@ from .forms import ProfileForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from .models import Profile
 
 # Create your views here.
 
@@ -20,8 +21,13 @@ def sign_up(request):
 
         if form.is_valid():
 
-            profile = form.save(commit=False)
-            profile.username = profile.username.lower()
+
+            name = request.POST['name'].lower()
+            username = request.POST['username'].lower()
+            password = request.POST['password']
+            picture = request.POST['profile_picture']
+
+            profile = Profile.objects.create_user(name=name, username=username, password=password, profile_picture = picture)
             profile.save()
 
             login(request, profile)
@@ -37,11 +43,44 @@ def sign_up(request):
     })
 
 
+def sign_in(request):
+
+    if request.user.is_authenticated:
+        redirect('account')
+
+    form = ProfileForm()
+
+    if request.method == 'POST':        
+
+        username = request.POST['username'].lower()
+        password = request.POST['password']
+
+        print(username, password)
+
+        profile = authenticate(request, username=username, password=password)
+
+        print('profile', profile)
+          
+        if profile is not None:
+            login(request, profile)
+            return redirect('account')
+        else:
+            messages.error(request, 'Invalid username and/or password.')
+            return redirect('sign_in')
+          
+    
+    else:
+         return render(request, 'plans/sign-in.html', {
+             'form': form
+         }) 
+
+
+
 @login_required
 def account(request):
     return render(request, 'plans/account.html')
 
-
+@login_required
 def log_out(request):
      logout(request)
      return redirect("index")

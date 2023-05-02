@@ -10,7 +10,9 @@
 			</li>
 			{% else %}
 			<li class="navbar__item">
-				<a href="" id="sign-in" class="navbar__link">Sign In</a>
+				<a href="{% url 'sign_in' %}" id="sign-in" class="navbar__link"
+					>Sign In</a
+				>
 			</li>
 			<li class="navbar__item">
 				<a href="{% url 'sign_up' %}" id="sign-up" class="navbar__link"

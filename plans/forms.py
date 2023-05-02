@@ -21,7 +21,7 @@ class ProfileForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)
 
-        self.fields['name'].widget.attrs.update({'class':'input', 'placeholder': 'Full Name', 'autofocus': True})
-        self.fields['username'].widget.attrs.update({'class':'input', 'placeholder': 'Username'})
-        self.fields['password'].widget.attrs.update({'class':'input', 'placeholder': 'Password'})
-        self.fields['profile_picture'].widget.attrs.update({'id':'picture'})
+        self.fields['name'].widget.attrs.update({'class':'input', 'placeholder': 'Full Name', 'name': 'name', 'autofocus': True})
+        self.fields['username'].widget.attrs.update({'class':'input', 'placeholder': 'Username', 'name': 'username'})
+        self.fields['password'].widget.attrs.update({'class':'input', 'placeholder': 'Password', 'name': 'password'})
+        self.fields['profile_picture'].widget.attrs.update({'id':'picture', 'name': 'profile_picture'})
