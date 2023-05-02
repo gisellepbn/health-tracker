@@ -28,7 +28,8 @@ def sign_up(request):
             return redirect('account')
            
         else:
-            return redirect('sign-up')
+            messages.error(request, 'Try a different username.')
+            return redirect('sign_up')
             
 
     return render(request, 'plans/sign-up.html', {
