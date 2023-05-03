@@ -6,9 +6,9 @@ class ProfileForm(ModelForm):
 
     class Meta:
         model = Profile
-        fields = ['name', 'username', 'password', 'profile_picture']
+        fields = ['name', 'username', 'password', 'picture']
         labels = {
-            'name': '', 'username':'', 'password':'', 'profile_picture': 'Profile Picture',
+            'name': '', 'username':'', 'password':'', 'picture': 'Profile Picture',
         }
         help_texts = {
             "username": None,
@@ -24,4 +24,4 @@ class ProfileForm(ModelForm):
         self.fields['name'].widget.attrs.update({'class':'input', 'placeholder': 'Full Name', 'name': 'name', 'autofocus': True})
         self.fields['username'].widget.attrs.update({'class':'input', 'placeholder': 'Username', 'name': 'username'})
         self.fields['password'].widget.attrs.update({'class':'input', 'placeholder': 'Password', 'name': 'password'})
-        self.fields['profile_picture'].widget.attrs.update({'id':'picture', 'name': 'profile_picture'})
+        self.fields['picture'].widget.attrs.update({'id':'profile_picture', 'name': 'picture'})

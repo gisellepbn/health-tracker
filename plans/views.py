@@ -4,8 +4,12 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Profile
+from django.contrib.auth.hashers import make_password
+from django.db import IntegrityError
+import os
 
-# Create your views here.
+
+
 
 def index(request):
     return render(request, 'plans/index.html')
@@ -21,21 +25,18 @@ def sign_up(request):
 
         if form.is_valid():
 
+            try:
+                profile = form.save(commit=False)
+                profile.username = profile.username.lower()
+                profile.password = make_password(profile.password)
+                profile.save()  
 
-            name = request.POST['name'].lower()
-            username = request.POST['username'].lower()
-            password = request.POST['password']
-            picture = request.POST['profile_picture']
-
-            profile = Profile.objects.create_user(name=name, username=username, password=password, profile_picture = picture)
-            profile.save()
-
-            login(request, profile)
-            return redirect('account')
-           
-        else:
-            messages.error(request, 'Try a different username.')
-            return redirect('sign_up')
+                login(request, profile)
+                return redirect('account')
+            except IntegrityError:
+                messages.error(request, 'Try a different username.')
+                return redirect('sign_up') 
+         
             
 
     return render(request, 'plans/sign-up.html', {
@@ -72,11 +73,11 @@ def sign_in(request):
 
 
 
-@login_required
+@login_required(login_url='sign_in')
 def account(request):
     return render(request, 'plans/account.html')
 
-@login_required
+@login_required(login_url='sign_in')
 def log_out(request):
      logout(request)
      return redirect("index")
