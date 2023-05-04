@@ -1,0 +1,11 @@
+@use '../abstracts/abstracts' as *;
+
+.wrapper {
+	display: flex;
+	height: 92vh;
+	width: 100%;
+
+	.data-box {
+		width: 80vw;
+	}
+}

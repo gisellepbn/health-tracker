@@ -1,5 +1,9 @@
 <nav class="navbar">
+	{% if request.user.is_authenticated %}
+	<a href="{% url 'account' %}" class="logo">HealthTracker</a>
+	{% else %}
 	<a href="{% url 'index' %}" class="logo">HealthTracker</a>
+	{% endif %}
 	<div class="navbar__menu">
 		<ul class="navbar__items">
 			{% if request.user.is_authenticated %}

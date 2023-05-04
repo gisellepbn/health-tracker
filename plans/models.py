@@ -7,7 +7,7 @@ class Profile(AbstractUser):
 
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True, editable=False)
     name = models.CharField(max_length=100)
-    picture = models.ImageField(blank=True,null=True, upload_to='profile/')
+    picture = models.ImageField(blank=True,null=True, upload_to='profile/', default='profile/default.png')
     created = models.DateTimeField(auto_now_add= True, editable=False)
 
     class Meta:

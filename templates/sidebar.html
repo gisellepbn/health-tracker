@@ -1,0 +1,23 @@
+<div class="sidebar">
+	<div class="profile-box">
+		<div class="profile-picture">
+			<img src="{{request.user.picture.url}}" alt="profile picture" />
+		</div>
+		<p class="profile-name">{{request.user.name}}</p>
+		<p class="profile-username">{{request.user.username}}</p>
+		<a class="profile-edit" href=""
+			><i class="fa-solid fa-pen-to-square"></i> Edit</a
+		>
+	</div>
+	<div class="sidebar-links">
+		<a href="{% url 'daily_progress' %}" class="sidebar-link"
+			><i class="fa-solid fa-calendar-day"></i> Daily Progress</a
+		>
+		<a href="{% url 'daily_goals' %}" class="sidebar-link"
+			><i class="fa-solid fa-bullseye"></i> Daily Goals</a
+		>
+		<a href="{% url 'weekly_progress' %}" class="sidebar-link"
+			><i class="fa-solid fa-calendar-days"></i> Weekly Progress</a
+		>
+	</div>
+</div>
