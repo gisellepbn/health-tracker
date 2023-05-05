@@ -6,6 +6,108 @@
 	width: 100%;
 
 	.data-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
 		width: 80vw;
+		margin-top: 2rem;
+
+		.header {
+			display: flex;
+			justify-content: space-between;
+			background-color: $purple;
+			border-radius: $border-radius;
+			box-shadow: $box-shadow;
+			width: 90%;
+
+			&-title {
+				color: $light-gray;
+				font-weight: $font-regular;
+				padding: 1rem;
+			}
+
+			&-date {
+				padding: 1rem;
+				color: $light-gray;
+				background-color: $purple;
+				border: none;
+				outline: none;
+				border-radius: $border-radius;
+
+				// Change the icon color from black to white
+				&::-webkit-calendar-picker-indicator {
+					filter: invert(1);
+				}
+			}
+		}
+
+		.content {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 1rem;
+			width: 90%;
+			height: 45%;
+
+			.card {
+				display: flex;
+				flex-direction: column;
+				width: 45%;
+				height: 90%;
+				background-color: $white;
+				border-radius: $border-radius;
+				box-shadow: $box-shadow;
+
+				&-header {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+					background-color: $purple;
+					border-radius: 5px 5px 0 0;
+					padding: 0.5rem 1rem;
+
+					.card-title {
+						margin-top: 0;
+						color: $light-gray;
+					}
+				}
+
+				&-content {
+					table {
+						width: 100%;
+						margin: 1rem 0;
+						border-collapse: collapse;
+						tr {
+							border-color: $extra-light-gray;
+							&:nth-child(odd) {
+								background-color: $extra-light-gray;
+							}
+
+							.parameter,
+							.goal,
+							.unit {
+								color: $navy;
+								font-size: $small;
+							}
+
+							.parameter {
+								width: 60%;
+								padding: 0.5rem 2.5rem;
+							}
+							.goal {
+								width: 10%;
+								padding-left: 1rem;
+								text-align: end;
+							}
+							.unit {
+								width: 30%;
+								padding-left: 1rem;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }

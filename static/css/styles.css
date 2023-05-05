@@ -417,7 +417,95 @@ p {
   width: 100%;
 }
 .wrapper .data-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   width: 80vw;
+  margin-top: 2rem;
+}
+.wrapper .data-box .header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #3f0071;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 90%;
+}
+.wrapper .data-box .header-title {
+  color: #f5f5f5;
+  font-weight: 400;
+  padding: 1rem;
+}
+.wrapper .data-box .header-date {
+  padding: 1rem;
+  color: #f5f5f5;
+  background-color: #3f0071;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.wrapper .data-box .header-date::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+.wrapper .data-box .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 90%;
+  height: 45%;
+}
+.wrapper .data-box .content .card {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: 90%;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.wrapper .data-box .content .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3f0071;
+  border-radius: 5px 5px 0 0;
+  padding: 0.5rem 1rem;
+}
+.wrapper .data-box .content .card-header .card-title {
+  margin-top: 0;
+  color: #f5f5f5;
+}
+.wrapper .data-box .content .card-content table {
+  width: 100%;
+  margin: 1rem 0;
+  border-collapse: collapse;
+}
+.wrapper .data-box .content .card-content table tr {
+  border-color: #fafafa;
+}
+.wrapper .data-box .content .card-content table tr:nth-child(odd) {
+  background-color: #fafafa;
+}
+.wrapper .data-box .content .card-content table tr .parameter,
+.wrapper .data-box .content .card-content table tr .goal,
+.wrapper .data-box .content .card-content table tr .unit {
+  color: #150050;
+  font-size: 1rem;
+}
+.wrapper .data-box .content .card-content table tr .parameter {
+  width: 60%;
+  padding: 0.5rem 2.5rem;
+}
+.wrapper .data-box .content .card-content table tr .goal {
+  width: 10%;
+  padding-left: 1rem;
+  text-align: end;
+}
+.wrapper .data-box .content .card-content table tr .unit {
+  width: 30%;
+  padding-left: 1rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -3,11 +3,12 @@ from .forms import ProfileForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Profile
+from .models import Profile, Plan
+from .utils import plans_per_date
 from django.contrib.auth.hashers import make_password
 from django.db import IntegrityError
 import os
-
+import datetime
 
 
 
@@ -32,7 +33,7 @@ def sign_up(request):
                 profile.save()  
 
                 login(request, profile)
-                return redirect('account')
+                return redirect('plan', datetime.date.today())
             except IntegrityError:
                 messages.error(request, 'Try a different username.')
                 return redirect('sign_up') 
@@ -47,7 +48,7 @@ def sign_up(request):
 def sign_in(request):
 
     if request.user.is_authenticated:
-        redirect('account')
+        redirect('plan', 'progress', datetime.date.today())
 
     form = ProfileForm()
 
@@ -60,7 +61,7 @@ def sign_in(request):
           
         if profile is not None:
             login(request, profile)
-            return redirect('account')
+            return redirect('plan','progress', datetime.date.today())
         else:
             messages.error(request, 'Invalid username and/or password.')
             return redirect('sign_in')
@@ -74,26 +75,23 @@ def sign_in(request):
 
 
 @login_required(login_url='sign_in')
-def account(request):
-
-    return render(request, 'plans/account.html')
-
-@login_required(login_url='sign_in')
 def log_out(request):
      logout(request)
      return redirect("index")
 
 
 @login_required(login_url='sign_in')
-def daily_goals(request):
-    return render(request, 'plans/daily-goals.html')
+def plan(request, plan, date=datetime.date.today()):
+
+    nutrition_plan, water_plan, exercise_plan, sleep_plan = plans_per_date(request, date)
+
+    return render(request, 'plans/plan.html', {
+        'nutrition_plan': nutrition_plan,
+        'water_plan': water_plan,
+        'exercise_plan': exercise_plan,
+        'sleep_plan': sleep_plan,
+        'date': date,
+        'plan': plan
+    })
 
 
-@login_required(login_url='sign_in')
-def daily_progress(request):
-    return render(request, 'plans/daily-progress.html')
-
-
-@login_required(login_url='sign_in')
-def weekly_progress(request):
-    return render(request, 'plans/weekly-progress.html')

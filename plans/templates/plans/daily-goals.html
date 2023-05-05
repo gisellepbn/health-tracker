@@ -2,6 +2,66 @@
 <title>Daily Goals</title>
 {% endblock title %} {% block content %} {% include 'navbar.html' %}
 
-<div class="wrapper">{% include 'sidebar.html' %}</div>
+<div class="wrapper">
+	{% include 'sidebar.html' %}
+	<div class="data-box">
+		<div class="header">
+			<h3 class="header-title">
+				<i class="fa-solid fa-bullseye"></i> Daily Goals
+			</h3>
+
+			<input
+				id="date"
+				class="header-date"
+				type="date"
+				name="date"
+				title="Month-Day-Year" />
+		</div>
+		<div class="content">
+			<div class="card">
+				<div class="card-header">
+					<p class="card-title">
+						<i class="fa-solid fa-plate-wheat"></i> Nutrition
+					</p>
+					<a href="" class="card-edit"
+						><i class="fa-solid fa-pen-to-square"></i
+					></a>
+				</div>
+				<div class="card-content"></div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<p class="card-title">
+						<i class="fa-solid fa-bottle-water"></i> Water Intake
+					</p>
+					<a href="" class="card-edit"
+						><i class="fa-solid fa-pen-to-square"></i
+					></a>
+				</div>
+				<div class="card-content"></div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<p class="card-title">
+						<i class="fa-solid fa-person-running"></i> Exercise
+					</p>
+					<a href="" class="card-edit"
+						><i class="fa-solid fa-pen-to-square"></i
+					></a>
+				</div>
+				<div class="card-content"></div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<p class="card-title"><i class="fa-solid fa-bed"></i> Sleep</p>
+					<a href="" class="card-edit"
+						><i class="fa-solid fa-pen-to-square"></i
+					></a>
+				</div>
+				<div class="card-content"></div>
+			</div>
+		</div>
+	</div>
+</div>
 
 {% endblock %}
