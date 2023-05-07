@@ -8,4 +8,5 @@ urlpatterns = [
  path('log-out', views.log_out, name='log_out'),
  path('plan', views.plan, name='plan'),
  path('plan/<str:plan>/<str:date>', views.plan, name='plan'),
+ path('plan/progress/<str:date>/<uuid:id>', views.plan_id, name='plan_id'),
 ]

@@ -41,3 +41,17 @@ class Plan(models.Model):
 
     def __str__(self):
         return self.parameter
+
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "profile": self.profile.username,
+            "date": self.date,
+            "category": self.category,
+            "parameter": self.parameter,
+            "goal": self.goal,
+            "progress": self.progress,
+            "unit": self.unit,
+            "created": self.created           
+        }

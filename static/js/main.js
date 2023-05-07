@@ -32,6 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		daily_progress.style.display = 'none';
 	};
 
+	const load_plan_percentage = (element, bar, plan_date, plan_id) => {
+		fetch(`/plan/progress/${plan_date}/${plan_id}`)
+			.then((response) => response.json())
+			.then((plan) => {
+				element.innerText =
+					(100 * parseFloat(plan.progress)) / parseFloat(plan.goal) + '%';
+
+				bar.style.width =
+					(100 * parseFloat(plan.progress)) / parseFloat(plan.goal) + '%';
+			});
+	};
+
 	// Toggle between divs
 	if (document.location.href.includes('progress')) {
 		progress_toggle();
@@ -41,10 +53,32 @@ document.addEventListener('DOMContentLoaded', () => {
 		weekly_toggle();
 	}
 
+	// Load percentage of goal reached per plan
+	const plan_percentage = document.querySelectorAll('.plan_percentage');
+
+	plan_percentage.forEach((percentage) => {
+		const bar = percentage.parentElement.querySelector('.bar-done');
+
+		load_plan_percentage(
+			percentage,
+			bar,
+			progress_date.value,
+			percentage.dataset.id
+		);
+	});
+
 	// Events Handlers
-	progress_link.addEventListener('click', progress_toggle);
-	goals_link.addEventListener('click', goals_toggle);
-	weekly_link.addEventListener('click', weekly_toggle);
+	progress_link.addEventListener('click', () => {
+		document.location.href = `/plan/progress/${progress_date.value}`;
+	});
+
+	goals_link.addEventListener('click', () => {
+		document.location.href = `/plan/goals/${goals_date.value}`;
+	});
+
+	weekly_link.addEventListener('click', () => {
+		document.location.href = `/plan/weekly/${goals_date.value}`;
+	});
 
 	progress_date.addEventListener('change', () => {
 		document.location.href = `/plan/progress/${progress_date.value}`;

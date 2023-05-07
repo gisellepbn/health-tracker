@@ -18,7 +18,202 @@
 				title="Month-Day-Year"
 				value="{{date}}" />
 		</div>
-		<div class="content"></div>
+		<div class="progress-content">
+			<div class="progress-card">
+				<div class="progress-card-header">
+					<p class="progress-card-title">
+						<i class="fa-solid fa-plate-wheat"></i> Nutrition
+					</p>
+				</div>
+				<div class="progress-card-body">
+					<div class="progress-info">
+						{% for plan in nutrition_plan %}
+						<div class="info">
+							<div class="box">
+								<div class="flex-start">
+									{% if plan.goal == plan.progress %}
+									<i class="fa-solid fa-check"></i>
+									{% else %}
+									<i class="fa-solid fa-minus"></i>
+									{% endif %}
+									<p class="parameter">{{plan.parameter}}:</p>
+								</div>
+
+								<div class="flex-end">
+									<p>{{plan.progress|floatformat:"-2"}}</p>
+									<p>{{plan.unit}}</p>
+								</div>
+							</div>
+
+							<div class="progress-bar">
+								<p>0%</p>
+								<div class="bar-total">
+									<div class="bar-done"></div>
+								</div>
+								<p class="plan_percentage" data-id="{{plan.id}}"></p>
+							</div>
+						</div>
+
+						{% endfor %}
+
+						<a href="" class="progress-edit"
+							><i class="fa-solid fa-pen-to-square"></i
+						></a>
+					</div>
+					<div class="progress-percent">
+						<p class="percent-number">
+							{{nutrition_percentage|floatformat:'0'}}%
+						</p>
+						<p class="percent-label">goal reached</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="progress-card">
+				<div class="progress-card-header">
+					<p class="progress-card-title">
+						<i class="fa-solid fa-bottle-water"></i> Water Intake
+					</p>
+				</div>
+				<div class="progress-card-body">
+					<div class="progress-info">
+						{% for plan in water_plan %}
+						<div class="info">
+							<div class="box">
+								<div class="flex-start">
+									{% if plan.goal == plan.progress %}
+									<i class="fa-solid fa-check"></i>
+									{% else %}
+									<i class="fa-solid fa-minus"></i>
+									{% endif %}
+									<p class="parameter">{{plan.parameter}}:</p>
+								</div>
+
+								<div class="flex-end">
+									<p>{{plan.progress|floatformat:"-2"}}</p>
+									<p>{{plan.unit}}</p>
+								</div>
+							</div>
+
+							<div class="progress-bar">
+								<p>0%</p>
+								<div class="bar-total">
+									<div class="bar-done"></div>
+								</div>
+								<p class="plan_percentage" data-id="{{plan.id}}"></p>
+							</div>
+						</div>
+
+						{% endfor %}
+						<a href="" class="progress-edit"
+							><i class="fa-solid fa-pen-to-square"></i
+						></a>
+					</div>
+					<div class="progress-percent">
+						<p class="percent-number">
+							{{water_intake_percentage|floatformat:'0'}}%
+						</p>
+						<p class="percent-label">goal reached</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="progress-card">
+				<div class="progress-card-header">
+					<p class="progress-card-title">
+						<i class="fa-solid fa-person-running"></i> Exercise
+					</p>
+				</div>
+				<div class="progress-card-body">
+					<div class="progress-info">
+						{% for plan in exercise_plan %}
+						<div class="info">
+							<div class="box">
+								<div class="flex-start">
+									{% if plan.goal == plan.progress %}
+									<i class="fa-solid fa-check"></i>
+									{% else %}
+									<i class="fa-solid fa-minus"></i>
+									{% endif %}
+									<p class="parameter">{{plan.parameter}}:</p>
+								</div>
+
+								<div class="flex-end">
+									<p>{{plan.progress|floatformat:"-2"}}</p>
+									<p>{{plan.unit}}</p>
+								</div>
+							</div>
+
+							<div class="progress-bar">
+								<p>0%</p>
+								<div class="bar-total">
+									<div class="bar-done"></div>
+								</div>
+								<p class="plan_percentage" data-id="{{plan.id}}"></p>
+							</div>
+						</div>
+
+						{% endfor %}
+						<a href="" class="progress-edit"
+							><i class="fa-solid fa-pen-to-square"></i
+						></a>
+					</div>
+					<div class="progress-percent">
+						<p class="percent-number">
+							{{exercise_percentage|floatformat:'0'}}%
+						</p>
+						<p class="percent-label">goal reached</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="progress-card">
+				<div class="progress-card-header">
+					<p class="progress-card-title">
+						<i class="fa-solid fa-bed"></i> Sleep
+					</p>
+				</div>
+				<div class="progress-card-body">
+					<div class="progress-info">
+						{% for plan in sleep_plan %}
+						<div class="info">
+							<div class="box">
+								<div class="flex-start">
+									{% if plan.goal == plan.progress %}
+									<i class="fa-solid fa-check"></i>
+									{% else %}
+									<i class="fa-solid fa-minus"></i>
+									{% endif %}
+									<p class="parameter">{{plan.parameter}}:</p>
+								</div>
+
+								<div class="flex-end">
+									<p>{{plan.progress|floatformat:"-2"}}</p>
+									<p>{{plan.unit}}</p>
+								</div>
+							</div>
+
+							<div class="progress-bar">
+								<p>0%</p>
+								<div class="bar-total">
+									<div id="{{plan.id}}" class="bar-done"></div>
+								</div>
+								<p class="plan_percentage" data-id="{{plan.id}}"></p>
+							</div>
+						</div>
+
+						{% endfor %}
+						<a href="" class="progress-edit"
+							><i class="fa-solid fa-pen-to-square"></i
+						></a>
+					</div>
+					<div class="progress-percent">
+						<p class="percent-number">{{sleep_percentage|floatformat:'0'}}%</p>
+						<p class="percent-label">goal reached</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<div id="daily-goals" class="data-box">
@@ -35,7 +230,7 @@
 				title="Month-Day-Year"
 				value="{{date}}" />
 		</div>
-		<div class="content">
+		<div class="goals-content">
 			<div class="card">
 				<div class="card-header">
 					<p class="card-title">

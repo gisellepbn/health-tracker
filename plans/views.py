@@ -4,11 +4,13 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Profile, Plan
-from .utils import plans_per_date
+from .utils import plans_per_date, percentage_per_category
 from django.contrib.auth.hashers import make_password
 from django.db import IntegrityError
 import os
 import datetime
+from django.http import JsonResponse
+import json
 
 
 
@@ -85,13 +87,36 @@ def plan(request, plan, date=datetime.date.today()):
 
     nutrition_plan, water_plan, exercise_plan, sleep_plan = plans_per_date(request, date)
 
+    nutrition_percentage = percentage_per_category(nutrition_plan)
+    water_intake_percentage = percentage_per_category(water_plan)
+    exercise_percentage = percentage_per_category(exercise_plan)
+    sleep_percentage = percentage_per_category(sleep_plan)
+
     return render(request, 'plans/plan.html', {
         'nutrition_plan': nutrition_plan,
         'water_plan': water_plan,
         'exercise_plan': exercise_plan,
         'sleep_plan': sleep_plan,
         'date': date,
-        'plan': plan
+        'plan': plan,
+        'nutrition_percentage': nutrition_percentage,
+        'water_intake_percentage': water_intake_percentage,
+        'exercise_percentage': exercise_percentage,
+        'sleep_percentage': sleep_percentage
     })
 
+
+
+@login_required(login_url='sign_in')
+def plan_id(request, date, id):
+
+    if request.method == "GET":
+        try:
+            plan = Plan.objects.get(id = id)     
+        except Plan.DoesNotExist:
+            return JsonResponse({"error": "Plan not found."}, status=404)
+  
+        return JsonResponse(plan.serialize())
+
+    
 
