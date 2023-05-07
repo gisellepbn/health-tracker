@@ -35,7 +35,7 @@ def sign_up(request):
                 profile.save()  
 
                 login(request, profile)
-                return redirect('plan', datetime.date.today())
+                return redirect('plan', 'goals', datetime.date.today())
             except IntegrityError:
                 messages.error(request, 'Try a different username.')
                 return redirect('sign_up') 
@@ -50,7 +50,7 @@ def sign_up(request):
 def sign_in(request):
 
     if request.user.is_authenticated:
-        redirect('plan', 'progress', datetime.date.today())
+        redirect('plan', 'goals', datetime.date.today())
 
     form = ProfileForm()
 
@@ -63,7 +63,7 @@ def sign_in(request):
           
         if profile is not None:
             login(request, profile)
-            return redirect('plan','progress', datetime.date.today())
+            return redirect('plan','goals', datetime.date.today())
         else:
             messages.error(request, 'Invalid username and/or password.')
             return redirect('sign_in')
