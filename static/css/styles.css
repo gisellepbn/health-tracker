@@ -619,4 +619,9 @@ p {
   font-weight: 100;
 }
 
+.empty {
+  color: #150050;
+  padding: 0.5rem 1.5rem;
+}
+
 /*# sourceMappingURL=styles.css.map */

@@ -53,6 +53,16 @@
 								<p class="plan_percentage" data-id="{{plan.id}}"></p>
 							</div>
 						</div>
+						{% empty %}
+						<table>
+							<tbody>
+								<tr>
+									<td class="empty">
+										No progress to show. Set daily goals for this date first.
+									</td>
+								</tr>
+							</tbody>
+						</table>
 
 						{% endfor %}
 
@@ -103,7 +113,16 @@
 								<p class="plan_percentage" data-id="{{plan.id}}"></p>
 							</div>
 						</div>
-
+						{% empty %}
+						<table>
+							<tbody>
+								<tr>
+									<td class="empty">
+										No progress to show. Set daily goals for this date first.
+									</td>
+								</tr>
+							</tbody>
+						</table>
 						{% endfor %}
 						<a href="" class="progress-edit"
 							><i class="fa-solid fa-pen-to-square"></i
@@ -152,7 +171,16 @@
 								<p class="plan_percentage" data-id="{{plan.id}}"></p>
 							</div>
 						</div>
-
+						{% empty %}
+						<table>
+							<tbody>
+								<tr>
+									<td class="empty">
+										No progress to show. Set daily goals for this date first.
+									</td>
+								</tr>
+							</tbody>
+						</table>
 						{% endfor %}
 						<a href="" class="progress-edit"
 							><i class="fa-solid fa-pen-to-square"></i
@@ -201,7 +229,16 @@
 								<p class="plan_percentage" data-id="{{plan.id}}"></p>
 							</div>
 						</div>
-
+						{% empty %}
+						<table>
+							<tbody>
+								<tr>
+									<td class="empty">
+										No progress to show. Set daily goals for this date first.
+									</td>
+								</tr>
+							</tbody>
+						</table>
 						{% endfor %}
 						<a href="" class="progress-edit"
 							><i class="fa-solid fa-pen-to-square"></i
@@ -248,6 +285,11 @@
 							<td class="goal">{{plan.goal|floatformat:"-2"}}</td>
 							<td class="unit">{{plan.unit}}</td>
 						</tr>
+						{% empty %}
+						<tr>
+							<td class="empty">- No daily goals set for this date yet.</td>
+						</tr>
+
 						{% endfor %}
 					</table>
 				</div>
@@ -268,6 +310,10 @@
 							<td class="parameter">Water</td>
 							<td class="goal">{{plan.goal|floatformat:"-2"}}</td>
 							<td class="unit">{{plan.unit}}</td>
+						</tr>
+						{% empty %}
+						<tr>
+							<td class="empty">- No daily goals set for this date yet.</td>
 						</tr>
 						{% endfor %}
 					</table>
@@ -290,6 +336,10 @@
 							<td class="goal">{{plan.goal|floatformat:"-2"}}</td>
 							<td class="unit">{{plan.unit}}</td>
 						</tr>
+						{% empty %}
+						<tr>
+							<td class="empty">- No daily goals set for this date yet.</td>
+						</tr>
 						{% endfor %}
 					</table>
 				</div>
@@ -308,6 +358,10 @@
 							<td class="parameter">Sleep</td>
 							<td class="goal">{{plan.goal|floatformat:"-2"}}</td>
 							<td class="unit">{{plan.unit}}</td>
+						</tr>
+						{% empty %}
+						<tr>
+							<td class="empty">- No daily goals set for this date yet.</td>
 						</tr>
 						{% endfor %}
 					</table>
