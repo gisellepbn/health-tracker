@@ -14,6 +14,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	const goals_date = document.querySelector('#goals-date');
 	const weekly_date = document.querySelector('#weekly-date');
 
+	// Delete button
+	const delete_profile = document.querySelector('#delete-profile');
+
+	// Modal for pop up messages
+	const modal = document.querySelector('.modal');
+	const modal_confirm = document.querySelector('#modal-confirm');
+	const modal_message = document.querySelector('#modal-message');
+	const modal_close = document.querySelector('#modal-close');
+
 	// Functions
 	const progress_toggle = () => {
 		daily_progress.style.display = 'flex';
@@ -119,6 +128,26 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (weekly_date) {
 		weekly_date.addEventListener('change', () => {
 			document.location.href = `/plan/weekly/${weekly_date.value}`;
+		});
+	}
+
+	if (delete_profile) {
+		delete_profile.addEventListener('click', (event) => {
+			event.preventDefault();
+			modal.classList.toggle('hidden');
+			modal_message.innerText = 'Do you want to delete your profile?';
+		});
+
+		modal_confirm.addEventListener('click', (event) => {
+			event.preventDefault();
+			document.location.href = '/delete-profile';
+		});
+	}
+
+	if (modal_close) {
+		modal_close.addEventListener('click', (event) => {
+			event.preventDefault();
+			modal.classList.toggle('hidden');
 		});
 	}
 });

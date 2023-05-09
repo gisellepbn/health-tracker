@@ -11,7 +11,7 @@
 		<label id="picture-label" for="profile_picture">Profile Picture</label>
 		{{form.picture}}
 		<div class="cta-group">
-			<div>
+			<div class="cta-box">
 				<input
 					class="btn update-btn"
 					type="submit"
@@ -20,11 +20,12 @@
 				<a href="{% url 'cancel' %}" class="btn cancel-btn">Cancel</a>
 			</div>
 
-			<a class="delete-btn" href="" title="Delete Profile"
+			<a id="delete-profile" class="delete-btn" href="" title="Delete Profile"
 				><i class="fa-solid fa-trash-can"></i
 			></a>
 		</div>
 	</form>
-</div>
 
+	{% include 'modal.html' %}
+</div>
 {% include 'white-footer.html' %} {% endblock %}

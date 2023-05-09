@@ -166,3 +166,13 @@ def edit_profile(request):
 def cancel(request):
     return redirect('plan','goals', date.today())
 
+
+
+
+@login_required(login_url='sign_in')
+def delete_profile(request):
+
+    profile = request.user
+    profile.delete()
+    
+    return redirect('sign_in')

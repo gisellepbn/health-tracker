@@ -39,21 +39,26 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		.update-btn {
-			&:hover {
-				outline: 1px solid $light-gray;
+
+		.cta-box {
+			display: flex;
+			gap: 0.5rem;
+			.update-btn {
+				&:hover {
+					outline: 1px solid $light-gray;
+				}
 			}
-		}
 
-		.cancel-btn {
-			background-color: $extra-light-gray;
-			padding: 0.4rem 1rem;
-			color: $dark-gray;
-			outline: 1px solid $light-gray;
+			.cancel-btn {
+				background-color: $extra-light-gray;
+				padding: 0.4rem 1rem;
+				color: $dark-gray;
+				outline: 1px solid $light-gray;
 
-			&:hover {
-				background-color: transparent;
-				color: $light-gray;
+				&:hover {
+					background-color: transparent;
+					color: $light-gray;
+				}
 			}
 		}
 
