@@ -39,7 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			.then((response) => response.json())
 			.then((plan) => {
 				element.innerText =
-					(100 * parseFloat(plan.progress)) / parseFloat(plan.goal) + '%';
+					Math.round(
+						(100 * parseFloat(plan.progress)) / parseFloat(plan.goal)
+					) + '%';
 
 				bar.style.width =
 					(100 * parseFloat(plan.progress)) / parseFloat(plan.goal) + '%';

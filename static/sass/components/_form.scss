@@ -46,10 +46,12 @@
 		}
 
 		.cancel-btn {
-			background-color: $light-gray;
+			background-color: $extra-light-gray;
+			padding: 0.4rem 1rem;
 			color: $dark-gray;
+			outline: 1px solid $light-gray;
+
 			&:hover {
-				outline: 1px solid $light-gray;
 				background-color: transparent;
 				color: $light-gray;
 			}
@@ -57,7 +59,7 @@
 
 		.delete-btn {
 			padding: 0.5rem $small;
-			background-color: #2576FB;
+			background-color: #33658d;
 			border-radius: $border-radius;
 
 			&:hover {

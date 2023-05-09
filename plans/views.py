@@ -165,3 +165,4 @@ def edit_profile(request):
 @login_required(login_url='sign_in')
 def cancel(request):
     return redirect('plan','goals', date.today())
+
