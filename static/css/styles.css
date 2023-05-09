@@ -221,6 +221,35 @@ p {
 .form .form-btn:hover {
   background-color: #150050;
 }
+.form .cta-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form .cta-group .update-btn:hover {
+  outline: 1px solid #f5f5f5;
+}
+.form .cta-group .cancel-btn {
+  background-color: #f5f5f5;
+  color: #2f2e41;
+}
+.form .cta-group .cancel-btn:hover {
+  outline: 1px solid #f5f5f5;
+  background-color: transparent;
+  color: #f5f5f5;
+}
+.form .cta-group .delete-btn {
+  padding: 0.5rem 1rem;
+  background-color: #2576FB;
+  border-radius: 5px;
+}
+.form .cta-group .delete-btn:hover {
+  background-color: transparent;
+  outline: 1px solid #f5f5f5;
+}
+.form .cta-group .delete-btn i {
+  color: #f5f5f5;
+}
 .form .input {
   font-weight: 100;
   padding: 0.5rem;

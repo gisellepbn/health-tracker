@@ -5,7 +5,7 @@
 		</div>
 		<p class="profile-name">{{request.user.name}}</p>
 		<p class="profile-username">{{request.user.username}}</p>
-		<a class="profile-edit" href=""
+		<a class="profile-edit" href="{% url 'edit_profile' %}"
 			><i class="fa-solid fa-pen-to-square"></i> Edit</a
 		>
 	</div>

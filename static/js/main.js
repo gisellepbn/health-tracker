@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const goals_date = document.querySelector('#goals-date');
 	const weekly_date = document.querySelector('#weekly-date');
 
+	// Functions
 	const progress_toggle = () => {
 		daily_progress.style.display = 'flex';
 		daily_goals.style.display = 'none';
@@ -56,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		progress_toggle();
 	} else if (document.location.href.includes('goals')) {
 		goals_toggle();
-	} else {
+	} else if (document.location.href.includes('weekly')) {
 		weekly_toggle();
 	}
 
@@ -83,27 +84,39 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	// Events Handlers
-	progress_link.addEventListener('click', () => {
-		document.location.href = `/plan/progress/${progress_date.value}`;
-	});
+	if (progress_link) {
+		progress_link.addEventListener('click', () => {
+			document.location.href = `/plan/progress/${progress_date.value}`;
+		});
+	}
 
-	goals_link.addEventListener('click', () => {
-		document.location.href = `/plan/goals/${goals_date.value}`;
-	});
+	if (goals_link) {
+		goals_link.addEventListener('click', () => {
+			document.location.href = `/plan/goals/${goals_date.value}`;
+		});
+	}
 
-	weekly_link.addEventListener('click', () => {
-		document.location.href = `/plan/weekly/${goals_date.value}`;
-	});
+	if (weekly_link) {
+		weekly_link.addEventListener('click', () => {
+			document.location.href = `/plan/weekly/${goals_date.value}`;
+		});
+	}
 
-	progress_date.addEventListener('change', () => {
-		document.location.href = `/plan/progress/${progress_date.value}`;
-	});
+	if (progress_date) {
+		progress_date.addEventListener('change', () => {
+			document.location.href = `/plan/progress/${progress_date.value}`;
+		});
+	}
 
-	goals_date.addEventListener('change', () => {
-		document.location.href = `/plan/goals/${goals_date.value}`;
-	});
+	if (goals_date) {
+		goals_date.addEventListener('change', () => {
+			document.location.href = `/plan/goals/${goals_date.value}`;
+		});
+	}
 
-	weekly_date.addEventListener('change', () => {
-		document.location.href = `/plan/weekly/${weekly_date.value}`;
-	});
+	if (weekly_date) {
+		weekly_date.addEventListener('change', () => {
+			document.location.href = `/plan/weekly/${weekly_date.value}`;
+		});
+	}
 });

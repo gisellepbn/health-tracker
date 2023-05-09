@@ -35,6 +35,42 @@
 		}
 	}
 
+	.cta-group {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.update-btn {
+			&:hover {
+				outline: 1px solid $light-gray;
+			}
+		}
+
+		.cancel-btn {
+			background-color: $light-gray;
+			color: $dark-gray;
+			&:hover {
+				outline: 1px solid $light-gray;
+				background-color: transparent;
+				color: $light-gray;
+			}
+		}
+
+		.delete-btn {
+			padding: 0.5rem $small;
+			background-color: #2576FB;
+			border-radius: $border-radius;
+
+			&:hover {
+				background-color: transparent;
+				outline: 1px solid $light-gray;
+			}
+
+			i {
+				color: $light-gray;
+			}
+		}
+	}
+
 	.input {
 		font-weight: $font-thin;
 		padding: 0.5rem;

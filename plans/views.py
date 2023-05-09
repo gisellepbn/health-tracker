@@ -130,3 +130,38 @@ def plan_id(request, date, id):
         return JsonResponse(plan.serialize())
 
     
+@login_required(login_url='sign_in')
+def edit_profile(request):
+
+    profile = request.user
+
+    form = ProfileForm(instance=profile)
+
+    if request.method == 'POST':
+
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+
+        if 'update' in request.POST and form.is_valid():
+            
+            user = form.save(commit=False)
+            user.username = user.username.lower()
+            user.password = make_password(user.password)
+            user.save()
+
+            login(request, user)
+            return redirect('plan', 'goals', date.today())
+            
+            
+        else:
+            messages.error(request, 'Information is not valid')
+
+
+
+    return render(request, 'plans/edit-profile.html', {
+        'form': form
+    })
+
+
+@login_required(login_url='sign_in')
+def cancel(request):
+    return redirect('plan','goals', date.today())

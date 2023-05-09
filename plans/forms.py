@@ -1,5 +1,5 @@
 from .models import Profile
-from django.forms import ModelForm, PasswordInput
+from django.forms import ModelForm, PasswordInput, FileInput
 
 
 class ProfileForm(ModelForm):
@@ -8,14 +8,15 @@ class ProfileForm(ModelForm):
         model = Profile
         fields = ['name', 'username', 'password', 'picture']
         labels = {
-            'name': '', 'username':'', 'password':'', 'picture': 'Profile Picture',
+            'name': '', 'username':'', 'password':'',
         }
         help_texts = {
             "username": None,
         }
 
         widgets = {
-            'password': PasswordInput()
+            'password': PasswordInput(),
+            'picture': FileInput()
         }
 
     def __init__(self, *args, **kwargs):

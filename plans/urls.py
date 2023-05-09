@@ -9,5 +9,6 @@ urlpatterns = [
  path('plan', views.plan, name='plan'),
  path('plan/<str:label>/<str:date>', views.plan, name='plan'),
  path('plan/progress/<str:date>/<uuid:id>', views.plan_id, name='plan_id'),
-
+ path('profile', views.edit_profile, name='edit_profile'),
+ path('/', views.cancel, name='cancel')
 ]

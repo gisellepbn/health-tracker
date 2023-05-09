@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block title %}
+<title>Edit Profile</title>
+{% endblock %} {% block content %} {% include 'navbar.html' %}
+
+<div class="container">
+	{% include 'alerts.html' %}
+	<form class="form" action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<h3 class="form-title">Edit Profile</h3>
+		{{form.name}} {{form.username}} {{form.password}}
+		<label id="picture-label" for="profile_picture">Profile Picture</label>
+		{{form.picture}}
+		<div class="cta-group">
+			<div>
+				<input
+					class="btn update-btn"
+					type="submit"
+					name="update"
+					value="Update" />
+				<a href="{% url 'cancel' %}" class="btn cancel-btn">Cancel</a>
+			</div>
+
+			<a class="delete-btn" href="" title="Delete Profile"
+				><i class="fa-solid fa-trash-can"></i
+			></a>
+		</div>
+	</form>
+</div>
+
+{% include 'white-footer.html' %} {% endblock %}
