@@ -3,12 +3,12 @@ from .forms import ProfileForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Profile, Plan
-from .utils import plans_per_date, percentage_per_category
+from .models import Plan
+from .utils import plans_per_date, percentage_per_category, weekly_progress
 from django.contrib.auth.hashers import make_password
 from django.db import IntegrityError
 import os
-import datetime
+from datetime import date
 from django.http import JsonResponse
 import json
 
@@ -35,7 +35,7 @@ def sign_up(request):
                 profile.save()  
 
                 login(request, profile)
-                return redirect('plan', 'goals', datetime.date.today())
+                return redirect('plan', 'goals', date.today())
             except IntegrityError:
                 messages.error(request, 'Try a different username.')
                 return redirect('sign_up') 
@@ -50,7 +50,7 @@ def sign_up(request):
 def sign_in(request):
 
     if request.user.is_authenticated:
-        redirect('plan', 'goals', datetime.date.today())
+        redirect('plan', 'goals', date.today())
 
     form = ProfileForm()
 
@@ -63,7 +63,7 @@ def sign_in(request):
           
         if profile is not None:
             login(request, profile)
-            return redirect('plan','goals', datetime.date.today())
+            return redirect('plan','goals', date.today())
         else:
             messages.error(request, 'Invalid username and/or password.')
             return redirect('sign_in')
@@ -83,8 +83,9 @@ def log_out(request):
 
 
 @login_required(login_url='sign_in')
-def plan(request, plan, date=datetime.date.today()):
+def plan(request, label, date=date.today()):
 
+   
     nutrition_plan, water_plan, exercise_plan, sleep_plan = plans_per_date(request, date)
 
     nutrition_percentage = percentage_per_category(nutrition_plan)
@@ -92,17 +93,27 @@ def plan(request, plan, date=datetime.date.today()):
     exercise_percentage = percentage_per_category(exercise_plan)
     sleep_percentage = percentage_per_category(sleep_plan)
 
+    nutrition_weekly = weekly_progress(request, 'Nutrition', date)
+    water_weekly = weekly_progress(request, 'Water_Intake', date)
+    exercise_weekly = weekly_progress(request, 'Exercise', date)
+    sleep_weekly = weekly_progress(request, 'Sleep', date)
+
+
     return render(request, 'plans/plan.html', {
         'nutrition_plan': nutrition_plan,
         'water_plan': water_plan,
         'exercise_plan': exercise_plan,
         'sleep_plan': sleep_plan,
         'date': date,
-        'plan': plan,
+        'label': label,
         'nutrition_percentage': nutrition_percentage,
         'water_intake_percentage': water_intake_percentage,
         'exercise_percentage': exercise_percentage,
-        'sleep_percentage': sleep_percentage
+        'sleep_percentage': sleep_percentage,
+        'nutrition_weekly': nutrition_weekly,
+        'water_weekly': water_weekly,
+        'exercise_weekly': exercise_weekly,
+        'sleep_weekly': sleep_weekly
     })
 
 
@@ -119,4 +130,3 @@ def plan_id(request, date, id):
         return JsonResponse(plan.serialize())
 
     
-

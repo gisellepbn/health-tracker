@@ -27,22 +27,35 @@
 				padding: 1rem;
 			}
 
-			&-date {
-				padding: 1rem;
-				color: $light-gray;
-				background-color: $purple;
-				border: none;
-				outline: none;
-				border-radius: $border-radius;
+			.date-container {
+				display: flex;
+				align-items: center;
 
-				// Change the icon color from black to white
-				&::-webkit-calendar-picker-indicator {
-					filter: invert(1);
+				#header-subtitle {
+					color: $light-gray;
+					font-size: small;
+					font-weight: $font-light;
+					margin-top: 0;
+				}
+
+				.header-date {
+					padding: 1rem;
+					padding-left: 0.5rem;
+					color: $light-gray;
+					background-color: $purple;
+					border: none;
+					outline: none;
+					border-radius: $border-radius;
+
+					// Change the icon color from black to white
+					&::-webkit-calendar-picker-indicator {
+						filter: invert(1);
+					}
 				}
 			}
 		}
 
-		.goals-content {
+		.content {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
@@ -103,6 +116,43 @@
 							.unit {
 								width: 30%;
 								padding-left: 1rem;
+							}
+						}
+					}
+
+					.weekly-content {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						padding: 1rem 4rem;
+
+						.chart {
+							display: flex;
+							flex-direction: column;
+
+							&-percentage {
+								font-size: 0.7rem;
+								margin-top: 0;
+								color: $navy;
+							}
+
+							&-bar {
+								width: 1.5rem;
+								height: 6rem;
+								background-color: $light-pink;
+								border-radius: $border-radius;
+								.chart-fill {
+									background-color: $light-gray;
+									height: 100%-40%;
+									border-radius: $border-radius;
+								}
+							}
+
+							&-date {
+								font-size: 0.7rem;
+								writing-mode: sideways-lr;
+								text-orientation: sideways;
+								color: $navy;
 							}
 						}
 					}

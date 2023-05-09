@@ -9,14 +9,15 @@
 			<h3 class="header-title">
 				<i class="fa-solid fa-bullseye"></i> Daily Progress
 			</h3>
-
-			<input
-				id="progress-date"
-				class="header-date"
-				type="date"
-				name="date"
-				title="Month-Day-Year"
-				value="{{date}}" />
+			<div class="date-container">
+				<input
+					id="progress-date"
+					class="header-date"
+					type="date"
+					name="date"
+					title="Month-Day-Year"
+					value="{{date}}" />
+			</div>
 		</div>
 		<div class="progress-content">
 			<div class="progress-card">
@@ -258,16 +259,17 @@
 			<h3 class="header-title">
 				<i class="fa-solid fa-bullseye"></i> Daily Goals
 			</h3>
-
-			<input
-				id="goals-date"
-				class="header-date"
-				type="date"
-				name="date"
-				title="Month-Day-Year"
-				value="{{date}}" />
+			<div class="date-container">
+				<input
+					id="goals-date"
+					class="header-date"
+					type="date"
+					name="date"
+					title="Month-Day-Year"
+					value="{{date}}" />
+			</div>
 		</div>
-		<div class="goals-content">
+		<div class="content">
 			<div class="card">
 				<div class="card-header">
 					<p class="card-title">
@@ -375,16 +377,121 @@
 			<h3 class="header-title">
 				<i class="fa-solid fa-bullseye"></i> Weekly Progress
 			</h3>
-
-			<input
-				id="weekly-date"
-				class="header-date"
-				type="date"
-				name="date"
-				title="Month-Day-Year"
-				value="{{date}}" />
+			<div class="date-container">
+				<p id="header-subtitle">week ending on</p>
+				<input
+					id="weekly-date"
+					class="header-date"
+					type="date"
+					name="date"
+					title="Month-Day-Year"
+					value="{{date}}" />
+			</div>
 		</div>
-		<div class="content"></div>
+		<div class="content">
+			<div class="card">
+				<div class="card-header">
+					<p class="card-title">
+						<i class="fa-solid fa-plate-wheat"></i> Nutrition
+					</p>
+					<a href="" class="card-edit"
+						><i class="fa-solid fa-pen-to-square"></i
+					></a>
+				</div>
+				<div class="card-content">
+					<div class="weekly-content">
+						{% for value in nutrition_weekly %}
+						<div class="chart">
+							<p class="chart-percentage">
+								{{value.percentage|floatformat:'0'}}
+							</p>
+							<div class="chart-bar">
+								<div class="chart-fill"></div>
+							</div>
+							<p class="chart-date">{{value.date}}</p>
+						</div>
+
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<p class="card-title">
+						<i class="fa-solid fa-bottle-water"></i> Water Intake
+					</p>
+					<a href="" class="card-edit"
+						><i class="fa-solid fa-pen-to-square"></i
+					></a>
+				</div>
+				<div class="card-content">
+					<div class="weekly-content">
+						{% for value in water_weekly %}
+						<div class="chart">
+							<p class="chart-percentage">
+								{{value.percentage|floatformat:'0'}}
+							</p>
+							<div class="chart-bar">
+								<div class="chart-fill"></div>
+							</div>
+							<p class="chart-date">{{value.date}}</p>
+						</div>
+
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<p class="card-title">
+						<i class="fa-solid fa-person-running"></i> Exercise
+					</p>
+					<a href="" class="card-edit"
+						><i class="fa-solid fa-pen-to-square"></i
+					></a>
+				</div>
+				<div class="card-content">
+					<div class="weekly-content">
+						{% for value in exercise_weekly %}
+						<div class="chart">
+							<p class="chart-percentage">
+								{{value.percentage|floatformat:'0'}}
+							</p>
+							<div class="chart-bar">
+								<div class="chart-fill"></div>
+							</div>
+							<p class="chart-date">{{value.date}}</p>
+						</div>
+
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<p class="card-title"><i class="fa-solid fa-bed"></i> Sleep</p>
+					<a href="" class="card-edit"
+						><i class="fa-solid fa-pen-to-square"></i
+					></a>
+				</div>
+				<div class="card-content">
+					<div class="weekly-content">
+						{% for value in sleep_weekly %}
+						<div class="chart">
+							<p class="chart-percentage">
+								{{value.percentage|floatformat:'0'}}
+							</p>
+							<div class="chart-bar">
+								<div class="chart-fill"></div>
+							</div>
+							<p class="chart-date">{{value.date}}</p>
+						</div>
+
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 

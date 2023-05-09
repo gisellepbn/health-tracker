@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		daily_progress.style.display = 'none';
 	};
 
+	// Percentage per plan per date
 	const load_plan_percentage = (element, bar, plan_date, plan_id) => {
 		fetch(`/plan/progress/${plan_date}/${plan_id}`)
 			.then((response) => response.json())
@@ -42,6 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
 				bar.style.width =
 					(100 * parseFloat(plan.progress)) / parseFloat(plan.goal) + '%';
 			});
+	};
+
+	// Percentage per category per date
+	const load_weekly_progress = (bar, percentage) => {
+		bar.style.height = 100 - percentage.innerText + '%';
+		percentage.innerText = percentage.innerText + '%';
 	};
 
 	// Toggle between divs
@@ -65,6 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			progress_date.value,
 			percentage.dataset.id
 		);
+	});
+
+	// Load percentage per category per date
+	const chart_percentage = document.querySelectorAll('.chart-percentage');
+
+	chart_percentage.forEach((percentage) => {
+		const bar = percentage.parentElement.querySelector('.chart-fill');
+		load_weekly_progress(bar, percentage);
 	});
 
 	// Events Handlers
