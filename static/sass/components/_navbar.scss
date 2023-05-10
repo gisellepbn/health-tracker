@@ -8,6 +8,10 @@
 	padding: $small 5rem;
 	height: 8vh;
 
+	@media screen and (max-width: $breakpoint-tablet) {
+		padding: $small 2rem;
+	}
+
 	.logo {
 		color: $light-gray;
 

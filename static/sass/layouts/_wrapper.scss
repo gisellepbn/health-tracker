@@ -25,6 +25,10 @@
 				color: $light-gray;
 				font-weight: $font-regular;
 				padding: 1rem;
+
+				@media screen and (max-width: $breakpoint-mobile) {
+					font-size: smaller;
+				}
 			}
 
 			.date-container {
@@ -63,6 +67,11 @@
 			width: 90%;
 			height: 45%;
 
+			@media screen and (max-width: 950px) {
+				flex-direction: column;
+				flex-wrap: nowrap;
+			}
+
 			.card {
 				display: flex;
 				flex-direction: column;
@@ -71,6 +80,10 @@
 				background-color: $white;
 				border-radius: $border-radius;
 				box-shadow: $box-shadow;
+
+				@media screen and (max-width: 950px) {
+					width: 100%;
+				}
 
 				&-header {
 					display: flex;
@@ -83,6 +96,10 @@
 					.card-title {
 						margin-top: 0;
 						color: $light-gray;
+
+						@media screen and (max-width: $breakpoint-mobile) {
+							font-size: smaller;
+						}
 					}
 				}
 
@@ -91,6 +108,7 @@
 						width: 100%;
 						margin: 1rem 0;
 						border-collapse: collapse;
+
 						tr {
 							padding-right: 1rem;
 							border-color: $extra-light-gray;
@@ -103,6 +121,10 @@
 							.unit {
 								color: $navy;
 								font-size: $small;
+
+								@media screen and (max-width: $breakpoint-mobile) {
+									font-size: 0.6rem;
+								}
 							}
 
 							.parameter {

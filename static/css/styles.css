@@ -79,6 +79,11 @@ p {
   padding: 1rem 5rem;
   height: 8vh;
 }
+@media screen and (max-width: 960px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+}
 .navbar .logo {
   color: #f5f5f5;
 }
@@ -528,6 +533,11 @@ p {
   font-weight: 400;
   padding: 1rem;
 }
+@media screen and (max-width: 480px) {
+  .wrapper .data-box .header-title {
+    font-size: smaller;
+  }
+}
 .wrapper .data-box .header .date-container {
   display: flex;
   align-items: center;
@@ -558,6 +568,12 @@ p {
   width: 90%;
   height: 45%;
 }
+@media screen and (max-width: 950px) {
+  .wrapper .data-box .content {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}
 .wrapper .data-box .content .card {
   display: flex;
   flex-direction: column;
@@ -566,6 +582,11 @@ p {
   background-color: white;
   border-radius: 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+@media screen and (max-width: 950px) {
+  .wrapper .data-box .content .card {
+    width: 100%;
+  }
 }
 .wrapper .data-box .content .card-header {
   display: flex;
@@ -578,6 +599,11 @@ p {
 .wrapper .data-box .content .card-header .card-title {
   margin-top: 0;
   color: #f5f5f5;
+}
+@media screen and (max-width: 480px) {
+  .wrapper .data-box .content .card-header .card-title {
+    font-size: smaller;
+  }
 }
 .wrapper .data-box .content .card-content table {
   width: 100%;
@@ -596,6 +622,13 @@ p {
 .wrapper .data-box .content .card-content table tr .unit {
   color: #150050;
   font-size: 1rem;
+}
+@media screen and (max-width: 480px) {
+  .wrapper .data-box .content .card-content table tr .parameter,
+  .wrapper .data-box .content .card-content table tr .goal,
+  .wrapper .data-box .content .card-content table tr .unit {
+    font-size: 0.6rem;
+  }
 }
 .wrapper .data-box .content .card-content table tr .parameter {
   width: 60%;
