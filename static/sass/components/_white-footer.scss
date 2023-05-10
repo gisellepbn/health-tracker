@@ -7,6 +7,10 @@
 	overflow: hidden;
 	background-color: $purple;
 
+	@media screen and (max-width: $breakpoint-laptop) {
+		display: none;
+	}
+
 	.left-skewed {
 		width: 50%;
 		height: 100%;
