@@ -201,5 +201,15 @@ def edit_goal(request, plan_id):
     return render(request, 'plans/edit-goal.html', {
         'form': form,
         'date': plan.date,
-        'category': plan.category
+        'category': plan.category,
+        'plan': plan_id
     })
+
+
+@login_required(login_url='sign_in')
+def delete_plan(request, plan_id):
+    
+    plan = Plan.objects.get(id=plan_id)
+    date = plan.date
+    plan.delete()
+    return redirect('plan', 'goals', date)

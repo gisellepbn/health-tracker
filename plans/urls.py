@@ -14,5 +14,6 @@ urlpatterns = [
  path('cancel/<str:date>', views.cancel, name='cancel'),
  path('delete-profile', views.delete_profile, name='delete_profile'),
  path('edit-goal/<uuid:plan_id>', views.edit_goal, name='edit_goal'),
+ path('delete-plan/<uuid:plan_id>', views.delete_plan, name='delete_plan'),
  
 ]

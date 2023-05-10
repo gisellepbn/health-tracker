@@ -50,7 +50,11 @@
 				<a href="{% url 'cancel' date %}" class="btn cancel-btn">Cancel</a>
 			</div>
 
-			<a id="delete-goal" class="delete-btn" href="" title="Delete Goal"
+			<a
+				id="delete-goal"
+				class="delete-btn"
+				href="{% url 'delete_plan' plan %}"
+				title="Delete Goal"
 				><i class="fa-solid fa-trash-can"></i
 			></a>
 		</div>
