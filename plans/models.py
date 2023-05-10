@@ -20,10 +20,25 @@ class Profile(AbstractUser):
 class Plan(models.Model):
 
     CATEGORIES = [
-         ('Nutrition', 'Nutrition'),
-         ('Water_Intake', 'Water Intake'),
-         ('Exercise', 'Exercise'),
-         ('Sleep', 'Sleep')
+        ('Nutrition', 'Nutrition'),
+        ('Water_Intake', 'Water Intake'),
+        ('Exercise', 'Exercise'),
+        ('Sleep', 'Sleep')
+    ]
+
+    UNITS = [
+        ('Calories', 'Calories'),
+        ('Cups', 'Cups'),
+        ('Grams', 'Grams'),
+        ('Hours', 'Hours'),
+        ('Kilograms', 'Kilograms'),
+        ('Liters', 'Liters'),
+        ('Minutes', 'Minutes'),
+        ('Ounces', 'Ounces'),
+        ('Portions', 'Portions'),
+        ('Pounds', 'Pounds'),
+        ('Repetitions', 'Repetitions'),
+        ('Servings', 'Servings'),
     ]
 
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, unique=True, editable=False)
@@ -33,7 +48,7 @@ class Plan(models.Model):
     parameter = models.CharField(max_length=200)
     goal = models.FloatField()
     progress = models.FloatField()
-    unit = models.CharField(max_length=100)
+    unit = models.CharField(max_length=100, choices=UNITS)
     created = models.DateTimeField(auto_now_add= True, editable=False)
 
     class Meta:

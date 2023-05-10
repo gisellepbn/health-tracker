@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import ProfileForm
+from .forms import ProfileForm, GoalForm, ProgressForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -15,7 +15,11 @@ import json
 
 
 def index(request):
-    return render(request, 'plans/index.html')
+
+    if request.user.is_authenticated:
+        return redirect('plan', 'goals', date.today())
+    else:
+        return render(request, 'plans/index.html')
 
 
 def sign_up(request):
@@ -163,9 +167,8 @@ def edit_profile(request):
 
 
 @login_required(login_url='sign_in')
-def cancel(request):
-    return redirect('plan','goals', date.today())
-
+def cancel(request, date=date.today()):
+    return redirect('plan','goals', date)
 
 
 
@@ -176,3 +179,27 @@ def delete_profile(request):
     profile.delete()
     
     return redirect('sign_in')
+
+
+
+@login_required(login_url='sign_in')
+def edit_goal(request, plan_id):
+
+    plan = Plan.objects.get(id = plan_id)
+
+    form = GoalForm(instance=plan)
+
+    if request.method == 'POST':
+
+        form = GoalForm(request.POST, instance=plan) 
+          
+        if form.is_valid():
+            form.save()
+            return redirect('plan', 'goals', plan.date)
+           
+
+    return render(request, 'plans/edit-goal.html', {
+        'form': form,
+        'date': plan.date,
+        'category': plan.category
+    })

@@ -92,6 +92,7 @@
 						margin: 1rem 0;
 						border-collapse: collapse;
 						tr {
+							padding-right: 1rem;
 							border-color: $extra-light-gray;
 							&:nth-child(odd) {
 								background-color: $extra-light-gray;
@@ -114,8 +115,13 @@
 								text-align: end;
 							}
 							.unit {
-								width: 30%;
+								width: 20%;
 								padding-left: 1rem;
+							}
+
+							.edit {
+								width: 10%;
+								padding: 0 1rem;
 							}
 						}
 					}

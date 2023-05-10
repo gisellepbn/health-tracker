@@ -53,6 +53,10 @@
 								</div>
 								<p class="plan_percentage" data-id="{{plan.id}}"></p>
 							</div>
+
+							<a href="" class="progress-edit"
+								><i class="fa-solid fa-pen-to-square"></i
+							></a>
 						</div>
 						{% empty %}
 						<table>
@@ -66,10 +70,6 @@
 						</table>
 
 						{% endfor %}
-
-						<a href="" class="progress-edit"
-							><i class="fa-solid fa-pen-to-square"></i
-						></a>
 					</div>
 					<div class="progress-percent">
 						<p class="percent-number">
@@ -113,6 +113,10 @@
 								</div>
 								<p class="plan_percentage" data-id="{{plan.id}}"></p>
 							</div>
+
+							<a href="" class="progress-edit"
+								><i class="fa-solid fa-pen-to-square"></i
+							></a>
 						</div>
 						{% empty %}
 						<table>
@@ -125,9 +129,6 @@
 							</tbody>
 						</table>
 						{% endfor %}
-						<a href="" class="progress-edit"
-							><i class="fa-solid fa-pen-to-square"></i
-						></a>
 					</div>
 					<div class="progress-percent">
 						<p class="percent-number">
@@ -171,6 +172,9 @@
 								</div>
 								<p class="plan_percentage" data-id="{{plan.id}}"></p>
 							</div>
+							<a href="" class="progress-edit"
+								><i class="fa-solid fa-pen-to-square"></i
+							></a>
 						</div>
 						{% empty %}
 						<table>
@@ -183,9 +187,6 @@
 							</tbody>
 						</table>
 						{% endfor %}
-						<a href="" class="progress-edit"
-							><i class="fa-solid fa-pen-to-square"></i
-						></a>
 					</div>
 					<div class="progress-percent">
 						<p class="percent-number">
@@ -229,6 +230,9 @@
 								</div>
 								<p class="plan_percentage" data-id="{{plan.id}}"></p>
 							</div>
+							<a href="" class="progress-edit"
+								><i class="fa-solid fa-pen-to-square"></i
+							></a>
 						</div>
 						{% empty %}
 						<table>
@@ -241,9 +245,6 @@
 							</tbody>
 						</table>
 						{% endfor %}
-						<a href="" class="progress-edit"
-							><i class="fa-solid fa-pen-to-square"></i
-						></a>
 					</div>
 					<div class="progress-percent">
 						<p class="percent-number">{{sleep_percentage|floatformat:'0'}}%</p>
@@ -275,9 +276,6 @@
 					<p class="card-title">
 						<i class="fa-solid fa-plate-wheat"></i> Nutrition
 					</p>
-					<a href="" class="card-edit"
-						><i class="fa-solid fa-pen-to-square"></i
-					></a>
 				</div>
 				<div class="card-content">
 					<table>
@@ -286,6 +284,11 @@
 							<td class="parameter">{{plan.parameter}}</td>
 							<td class="goal">{{plan.goal|floatformat:"-2"}}</td>
 							<td class="unit">{{plan.unit}}</td>
+							<td class="edit">
+								<a href="{% url 'edit_goal' plan.id %}" class="card-edit"
+									><i class="fa-solid fa-pen-to-square"></i
+								></a>
+							</td>
 						</tr>
 						{% empty %}
 						<tr>
@@ -301,9 +304,6 @@
 					<p class="card-title">
 						<i class="fa-solid fa-bottle-water"></i> Water Intake
 					</p>
-					<a href="" class="card-edit"
-						><i class="fa-solid fa-pen-to-square"></i
-					></a>
 				</div>
 				<div class="card-content">
 					<table>
@@ -312,7 +312,13 @@
 							<td class="parameter">Water</td>
 							<td class="goal">{{plan.goal|floatformat:"-2"}}</td>
 							<td class="unit">{{plan.unit}}</td>
+							<td class="edit">
+								<a href="{% url 'edit_goal' plan.id %}" class="card-edit"
+									><i class="fa-solid fa-pen-to-square"></i
+								></a>
+							</td>
 						</tr>
+
 						{% empty %}
 						<tr>
 							<td class="empty">- No daily goals set for this date yet.</td>
@@ -326,9 +332,6 @@
 					<p class="card-title">
 						<i class="fa-solid fa-person-running"></i> Exercise
 					</p>
-					<a href="" class="card-edit"
-						><i class="fa-solid fa-pen-to-square"></i
-					></a>
 				</div>
 				<div class="card-content">
 					<table>
@@ -337,6 +340,11 @@
 							<td class="parameter">{{plan.parameter}}</td>
 							<td class="goal">{{plan.goal|floatformat:"-2"}}</td>
 							<td class="unit">{{plan.unit}}</td>
+							<td class="edit">
+								<a href="{% url 'edit_goal' plan.id %}" class="card-edit"
+									><i class="fa-solid fa-pen-to-square"></i
+								></a>
+							</td>
 						</tr>
 						{% empty %}
 						<tr>
@@ -349,9 +357,6 @@
 			<div class="card">
 				<div class="card-header">
 					<p class="card-title"><i class="fa-solid fa-bed"></i> Sleep</p>
-					<a href="" class="card-edit"
-						><i class="fa-solid fa-pen-to-square"></i
-					></a>
 				</div>
 				<div class="card-content">
 					<table>
@@ -360,6 +365,11 @@
 							<td class="parameter">Sleep</td>
 							<td class="goal">{{plan.goal|floatformat:"-2"}}</td>
 							<td class="unit">{{plan.unit}}</td>
+							<td class="edit">
+								<a href="{% url 'edit_goal' plan.id %}" class="card-edit"
+									><i class="fa-solid fa-pen-to-square"></i
+								></a>
+							</td>
 						</tr>
 						{% empty %}
 						<tr>

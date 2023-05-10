@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	const modal_message = document.querySelector('#modal-message');
 	const modal_close = document.querySelector('#modal-close');
 
+	const goal_label = document.querySelector('#parameter-label');
+	const goal_input = document.querySelector('#id_parameter');
+
 	// Functions
 	const progress_toggle = () => {
 		daily_progress.style.display = 'flex';
@@ -149,5 +152,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			event.preventDefault();
 			modal.classList.toggle('hidden');
 		});
+	}
+
+	if (
+		(goal_label && goal_label.dataset.category === 'Water_Intake') ||
+		goal_label.dataset.category === 'Sleep'
+	) {
+		goal_label.style.display = 'none';
+		goal_input.style.display = 'none';
 	}
 });

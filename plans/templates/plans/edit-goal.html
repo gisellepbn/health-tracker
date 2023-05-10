@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% block title %}
+<title>Edit Profile</title>
+{% endblock %} {% block content %} {% include 'navbar.html' %}
+
+<div class="container">
+	{% include 'alerts.html' %}
+	<form class="form" action="" method="post">
+		{% csrf_token %} {% if category == 'Nutrition' %}
+		<h3 class="form-title">Nutrition Goal</h3>
+		{% elif category == 'Water_Intake' %}
+		<h3 class="form-title">Water Intake Goal</h3>
+		{% elif category == 'Exercise' %}
+		<h3 class="form-title">Exercise Goal</h3>
+		{% else %}
+		<h3 class="form-title">Sleep Goal</h3>
+		{% endif %}
+
+		<label>Date: <span>{{date}}</span></label>
+
+		{% if category == 'Nutrition' %}
+		<label id="parameter-label" for="id_parameter" data-category="{{category}}"
+			>Intake</label
+		>
+		{% elif category == 'Water_Intake' %}
+		<label id="parameter-label" for="id_parameter" data-category="{{category}}"
+			>Goal</label
+		>
+		{% elif category == 'Exercise' %}
+		<label id="parameter-label" for="id_parameter" data-category="{{category}}"
+			>Activity</label
+		>
+		{% else %}
+		<label id="parameter-label" for="id_parameter" data-category="{{category}}"
+			>Goal</label
+		>
+		{% endif %} {{form.parameter}}
+
+		<label for="id_goal">Amount</label>
+		{{form.goal}}
+		<label for="id_unit">Unit</label>
+		{{form.unit}}
+
+		<div class="cta-group">
+			<div class="cta-box">
+				<input
+					class="btn update-btn"
+					type="submit"
+					name="update"
+					value="Update" />
+				<a href="{% url 'cancel' date %}" class="btn cancel-btn">Cancel</a>
+			</div>
+
+			<a id="delete-goal" class="delete-btn" href="" title="Delete Goal"
+				><i class="fa-solid fa-trash-can"></i
+			></a>
+		</div>
+	</form>
+</div>
+{% include 'white-footer.html' %} {% endblock %}

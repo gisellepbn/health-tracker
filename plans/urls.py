@@ -11,5 +11,8 @@ urlpatterns = [
  path('plan/progress/<str:date>/<uuid:id>', views.plan_id, name='plan_id'),
  path('profile', views.edit_profile, name='edit_profile'),
  path('cancel', views.cancel, name='cancel'),
+ path('cancel/<str:date>', views.cancel, name='cancel'),
  path('delete-profile', views.delete_profile, name='delete_profile'),
+ path('edit-goal/<uuid:plan_id>', views.edit_goal, name='edit_goal'),
+ 
 ]
