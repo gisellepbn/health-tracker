@@ -167,8 +167,8 @@ def edit_profile(request):
 
 
 @login_required(login_url='sign_in')
-def cancel(request, date=date.today()):
-    return redirect('plan','goals', date)
+def cancel(request, label='goals', date=date.today()):
+    return redirect('plan',label, date)
 
 
 
@@ -213,3 +213,28 @@ def delete_plan(request, plan_id):
     date = plan.date
     plan.delete()
     return redirect('plan', 'goals', date)
+
+
+
+@login_required(login_url='sign_in')
+def edit_progress(request, plan_id):
+
+    plan = Plan.objects.get(id = plan_id)
+
+    form = ProgressForm(instance=plan)
+
+    if request.method == 'POST':
+
+        form = ProgressForm(request.POST, instance=plan) 
+          
+        if form.is_valid():
+            form.save()
+            return redirect('plan', 'progress', plan.date)
+           
+
+    return render(request, 'plans/edit-progress.html', {
+        'form': form,
+        'date': plan.date,
+        'category': plan.category,
+        'plan': plan_id
+    })

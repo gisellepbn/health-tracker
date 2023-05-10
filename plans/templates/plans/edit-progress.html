@@ -1,18 +1,18 @@
 {% extends 'base.html' %} {% block title %}
-<title>Edit Goal</title>
+<title>Edit Progress</title>
 {% endblock %} {% block content %} {% include 'navbar.html' %}
 
 <div class="container">
 	{% include 'alerts.html' %}
 	<form class="form" action="" method="post">
 		{% csrf_token %} {% if category == 'Nutrition' %}
-		<h3 class="form-title">Nutrition Goal</h3>
+		<h3 class="form-title">Nutrition Progress</h3>
 		{% elif category == 'Water_Intake' %}
-		<h3 class="form-title">Water Intake Goal</h3>
+		<h3 class="form-title">Water Intake Progress</h3>
 		{% elif category == 'Exercise' %}
-		<h3 class="form-title">Exercise Goal</h3>
+		<h3 class="form-title">Exercise Progress</h3>
 		{% else %}
-		<h3 class="form-title">Sleep Goal</h3>
+		<h3 class="form-title">Sleep Progress</h3>
 		{% endif %}
 
 		<label>Date: <span>{{date}}</span></label>
@@ -48,7 +48,7 @@
 		{% endif %} {{form.parameter}}
 
 		<label for="id_goal">Amount</label>
-		{{form.goal}}
+		{{form.progress}}
 		<label for="id_unit">Unit</label>
 		{{form.unit}}
 
@@ -59,18 +59,10 @@
 					type="submit"
 					name="update"
 					value="Update" />
-				<a href="{% url 'cancel' 'goals' date %}" class="btn cancel-btn"
+				<a href="{% url 'cancel' 'progress' date %}" class="btn cancel-btn"
 					>Cancel</a
 				>
 			</div>
-
-			<a
-				id="delete-goal"
-				class="delete-btn"
-				href="{% url 'delete_plan' plan %}"
-				title="Delete Goal"
-				><i class="fa-solid fa-trash-can"></i
-			></a>
 		</div>
 	</form>
 </div>

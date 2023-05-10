@@ -40,7 +40,7 @@ class GoalForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super(GoalForm, self).__init__(*args, **kwargs)
 
-        self.fields['parameter'].widget.attrs.update({'class':'input', 'name': 'category'})
+        self.fields['parameter'].widget.attrs.update({'class':'input parameter-input', 'name': 'category'})
         self.fields['goal'].widget.attrs.update({'class':'input', 'name': 'goal'})
         self.fields['unit'].widget.attrs.update({'class':'input', 'name': 'unit'})
 
@@ -55,8 +55,8 @@ class ProgressForm(ModelForm):
          
     
     def __init__(self, *args, **kwargs):
-        super(GoalForm, self).__init__(*args, **kwargs)
+        super(ProgressForm, self).__init__(*args, **kwargs)
 
-        self.fields['parameter'].widget.attrs.update({'class':'input', 'name': 'category'})
+        self.fields['parameter'].widget.attrs.update({'class':'input parameter-input', 'name': 'category'})
         self.fields['progress'].widget.attrs.update({'class':'input', 'name': 'progress'})
         self.fields['unit'].widget.attrs.update({'class':'input', 'name': 'unit'})

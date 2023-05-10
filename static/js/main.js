@@ -23,8 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const modal_message = document.querySelector('#modal-message');
 	const modal_close = document.querySelector('#modal-close');
 
-	const goal_label = document.querySelector('#parameter-label');
-	const goal_input = document.querySelector('#id_parameter');
+	const parameter_label = document.querySelectorAll('.parameter-label');
 
 	// Functions
 	const progress_toggle = () => {
@@ -50,28 +49,34 @@ document.addEventListener('DOMContentLoaded', () => {
 		fetch(`/plan/progress/${plan_date}/${plan_id}`)
 			.then((response) => response.json())
 			.then((plan) => {
-				element.innerText =
-					Math.round(
-						(100 * parseFloat(plan.progress)) / parseFloat(plan.goal)
-					) + '%';
+				let percent = (100 * parseFloat(plan.progress)) / parseFloat(plan.goal);
+				element.innerText = Math.round(percent) + '%';
 
-				bar.style.width =
-					(100 * parseFloat(plan.progress)) / parseFloat(plan.goal) + '%';
+				if (percent >= 100) {
+					bar.style.width = '100%';
+				} else {
+					bar.style.width = percent + '%';
+				}
 			});
 	};
 
 	// Percentage per category per date
 	const load_weekly_progress = (bar, percentage) => {
-		bar.style.height = 100 - percentage.innerText + '%';
+		if (parseFloat(percentage.innerText) > 100) {
+			bar.style.height = 0 + '%';
+		} else {
+			bar.style.height = 100 - percentage.innerText + '%';
+		}
+
 		percentage.innerText = percentage.innerText + '%';
 	};
 
 	// Toggle between divs
-	if (document.location.href.includes('progress')) {
+	if (document.location.href.includes('plan/progress')) {
 		progress_toggle();
-	} else if (document.location.href.includes('goals')) {
+	} else if (document.location.href.includes('plan/goals')) {
 		goals_toggle();
-	} else if (document.location.href.includes('weekly')) {
+	} else if (document.location.href.includes('plan/weekly')) {
 		weekly_toggle();
 	}
 
@@ -154,11 +159,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	}
 
-	if (
-		(goal_label && goal_label.dataset.category === 'Water_Intake') ||
-		goal_label.dataset.category === 'Sleep'
-	) {
-		goal_label.style.display = 'none';
-		goal_input.style.display = 'none';
-	}
+	parameter_label.forEach((label) => {
+		const parameter_input =
+			label.parentElement.querySelector('.parameter-input');
+		if (
+			(label && label.dataset.category === 'Water_Intake') ||
+			(label && label.dataset.category === 'Sleep')
+		) {
+			label.style.display = 'none';
+			parameter_input.style.display = 'none';
+		}
+	});
 });
