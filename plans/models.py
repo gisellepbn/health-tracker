@@ -47,7 +47,7 @@ class Plan(models.Model):
     category = models.CharField(max_length=100, choices=CATEGORIES)
     parameter = models.CharField(max_length=200)
     goal = models.FloatField()
-    progress = models.FloatField()
+    progress = models.FloatField(blank=True, null=True, default=0)
     unit = models.CharField(max_length=100, choices=UNITS)
     created = models.DateTimeField(auto_now_add= True, editable=False)
 

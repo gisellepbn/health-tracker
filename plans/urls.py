@@ -16,5 +16,5 @@ urlpatterns = [
  path('edit-goal/<uuid:plan_id>', views.edit_goal, name='edit_goal'),
  path('delete-plan/<uuid:plan_id>', views.delete_plan, name='delete_plan'),
  path('edit-progress]/<uuid:plan_id>', views.edit_progress, name='edit_progress'),
- 
+ path('add-plan/<str:category>/<str:date>', views.add_plan, name='add_plan'), 
 ]

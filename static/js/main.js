@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		) {
 			label.style.display = 'none';
 			parameter_input.style.display = 'none';
+			parameter_input.value = 'Goal';
 		}
 	});
 });

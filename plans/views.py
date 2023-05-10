@@ -238,3 +238,33 @@ def edit_progress(request, plan_id):
         'category': plan.category,
         'plan': plan_id
     })
+
+
+@login_required(login_url='sign_in')
+def add_plan(request, category, date):
+    
+    profile = request.user
+
+    form = GoalForm()
+
+    if request.method == 'POST':
+
+        form = GoalForm(request.POST)
+
+        if form.is_valid():
+            
+            plan = form.save(commit=False)
+            plan.profile = profile
+            plan.date = date
+            plan.category = category            
+            plan.save()
+
+            return redirect('plan', 'goals', date)
+
+
+
+    return render(request,'plans/add-plan.html', {
+        'form': form,
+        'date': date,
+        'category': category        
+    })
