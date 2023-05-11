@@ -755,6 +755,11 @@ p {
   padding: 0.5rem 1rem;
   margin-top: 0;
 }
+@media screen and (max-width: 480px) {
+  .wrapper .data-box .progress-content .progress-card .progress-card-header .progress-card-title {
+    font-size: smaller;
+  }
+}
 .wrapper .data-box .progress-content .progress-card .progress-card-body {
   display: flex;
   width: 100%;
@@ -771,9 +776,16 @@ p {
   border-radius: 0 0 0 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+@media screen and (max-width: 1000px) {
+  .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info {
+    width: 100%;
+  }
+}
 .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .info {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  width: 95%;
   gap: 4rem;
 }
 .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .info .box {
@@ -787,6 +799,18 @@ p {
 }
 .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .info .box p {
   margin-top: 0;
+}
+@media screen and (max-width: 700px) {
+  .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .info .box i,
+  .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .info .box p {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .info .box i,
+  .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .info .box p {
+    font-size: 0.6rem;
+  }
 }
 .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .info .box .flex-start {
   display: flex;
@@ -806,14 +830,29 @@ p {
   align-items: center;
   gap: 0.5rem;
 }
+@media screen and (max-width: 480px) {
+  .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .info .progress-bar {
+    display: none;
+  }
+}
 .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .info .progress-bar p {
   margin-top: 0;
+}
+@media screen and (max-width: 700px) {
+  .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .info .progress-bar p {
+    font-size: 0.8rem;
+  }
 }
 .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .info .progress-bar .bar-total {
   background-color: #f5f5f5;
   width: 70%;
   height: 100%;
   border-radius: 5px;
+}
+@media screen and (max-width: 700px) {
+  .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .info .progress-bar .bar-total {
+    width: 40%;
+  }
 }
 .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .info .progress-bar .bar-total .bar-done {
   background-color: #fdd1e2;
@@ -822,7 +861,13 @@ p {
 }
 .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .progress-edit {
   color: #fb2576;
-  align-self: flex-end;
+  align-self: center;
+}
+@media screen and (max-width: 700px) {
+  .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .progress-edit i,
+  .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-info .progress-edit p {
+    font-size: 0.8rem;
+  }
 }
 .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-percent {
   background-color: #3f0071;
@@ -836,6 +881,11 @@ p {
   padding-bottom: 1rem;
   min-height: fit-content;
 }
+@media screen and (max-width: 1000px) {
+  .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-percent {
+    display: none;
+  }
+}
 .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-percent .percent-number {
   font-size: 4rem;
   color: #f5f5f5;
@@ -844,6 +894,14 @@ p {
   color: #f5f5f5;
   font-size: 1.5rem;
   font-weight: 100;
+}
+@media screen and (max-width: 1300px) {
+  .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-percent .percent-number {
+    font-size: 2.5rem;
+  }
+  .wrapper .data-box .progress-content .progress-card .progress-card-body .progress-percent .percent-label {
+    font-size: 1.5rem;
+  }
 }
 
 .empty {

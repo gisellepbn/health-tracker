@@ -112,7 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		) {
 			label.style.display = 'none';
 			parameter_input.style.display = 'none';
-			parameter_input.value = 'Goal';
+
+			if (label.dataset.category === 'Water_Intake') {
+				parameter_input.value = 'Water';
+			} else {
+				parameter_input.value = 'Sleep';
+			}
 		}
 	});
 

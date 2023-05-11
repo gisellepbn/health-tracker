@@ -209,6 +209,10 @@
 						color: $light-gray;
 						padding: 0.5rem 1rem;
 						margin-top: 0;
+
+						@media screen and (max-width: $breakpoint-mobile) {
+							font-size: smaller;
+						}
 					}
 				}
 
@@ -228,9 +232,15 @@
 						border-radius: 0 0 0 $border-radius;
 						box-shadow: $box-shadow;
 
+						@media screen and (max-width: 1000px) {
+							width: 100%;
+						}
+
 						.info {
 							display: flex;
+							justify-content: space-between;
 							align-items: center;
+							width: 95%;
 							gap: 4rem;
 
 							.box {
@@ -245,6 +255,20 @@
 
 								p {
 									margin-top: 0;
+								}
+
+								@media screen and (max-width: 700px) {
+									i,
+									p {
+										font-size: 0.8rem;
+									}
+								}
+
+								@media screen and (max-width: $breakpoint-mobile) {
+									i,
+									p {
+										font-size: 0.6rem;
+									}
 								}
 
 								.flex-start {
@@ -268,8 +292,16 @@
 								align-items: center;
 								gap: 0.5rem;
 
+								@media screen and (max-width: $breakpoint-mobile) {
+									display: none;
+								}
+
 								p {
 									margin-top: 0;
+
+									@media screen and (max-width: 700px) {
+										font-size: 0.8rem;
+									}
 								}
 
 								.bar-total {
@@ -277,6 +309,10 @@
 									width: 70%;
 									height: 100%;
 									border-radius: $border-radius;
+
+									@media screen and (max-width: 700px) {
+										width: 40%;
+									}
 
 									.bar-done {
 										background-color: $light-pink;
@@ -289,7 +325,14 @@
 
 						.progress-edit {
 							color: $pink;
-							align-self: flex-end;
+							align-self: center;
+
+							@media screen and (max-width: 700px) {
+								i,
+								p {
+									font-size: 0.8rem;
+								}
+							}
 						}
 					}
 
@@ -305,6 +348,10 @@
 						padding-bottom: 1rem;
 						min-height: fit-content;
 
+						@media screen and (max-width: 1000px) {
+							display: none;
+						}
+
 						.percent-number {
 							font-size: 4rem;
 							color: $light-gray;
@@ -313,6 +360,15 @@
 							color: $light-gray;
 							font-size: 1.5rem;
 							font-weight: $font-thin;
+						}
+
+						@media screen and (max-width: 1300px) {
+							.percent-number {
+								font-size: $big;
+							}
+							.percent-label {
+								font-size: $medium;
+							}
 						}
 					}
 				}
