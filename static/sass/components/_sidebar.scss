@@ -11,6 +11,14 @@
 		color: $light-gray;
 	}
 
+	.sidebar-text {
+		display: inline;
+
+		@media screen and (max-width: 600px) {
+			display: none;
+		}
+	}
+
 	.profile-box {
 		display: flex;
 		flex-direction: column;
@@ -24,6 +32,11 @@
 			height: 35%;
 			margin-bottom: 1.5rem;
 
+			@media screen and (max-width: $breakpoint-tablet) {
+				width: 55%;
+				height: 55%;
+			}
+
 			img {
 				width: 100%;
 				clip-path: circle();
@@ -34,17 +47,31 @@
 		.profile-name {
 			font-size: 1.5rem;
 			font-weight: $font-bold;
+			text-align: center;
+			padding: 0 0.5rem;
+
+			@media screen and (max-width: $breakpoint-tablet) {
+				font-size: smaller;
+			}
 		}
 
 		.profile-username {
 			margin: 0.5rem 0;
 			font-style: italic;
 			font-weight: $font-light;
+
+			@media screen and (max-width: $breakpoint-mobile) {
+				font-size: smaller;
+			}
 		}
 
 		.profile-edit {
 			&:hover {
 				text-decoration: underline;
+			}
+
+			@media screen and (max-width: $breakpoint-tablet) {
+				font-size: smaller;
 			}
 		}
 	}
@@ -56,9 +83,14 @@
 
 		.sidebar-link {
 			color: $light-gray;
+			padding: 0 0.5rem;
 
 			&:hover {
 				color: $pink;
+			}
+
+			@media screen and (max-width: $breakpoint-tablet) {
+				font-size: smaller;
 			}
 		}
 	}

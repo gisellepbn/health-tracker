@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const daily_goals = document.querySelector('#daily-goals');
 	const weekly_progress = document.querySelector('#weekly-progress');
 
-	// Sidebar links
+	// Sidebar elements
 	const progress_link = document.querySelector('#progress-link');
 	const goals_link = document.querySelector('#goals-link');
 	const weekly_link = document.querySelector('#weekly-link');
@@ -102,6 +102,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		load_weekly_progress(bar, percentage);
 	});
 
+	// Hide label and input for Water_Intake and Sleep
+	parameter_label.forEach((label) => {
+		const parameter_input =
+			label.parentElement.querySelector('.parameter-input');
+		if (
+			(label && label.dataset.category === 'Water_Intake') ||
+			(label && label.dataset.category === 'Sleep')
+		) {
+			label.style.display = 'none';
+			parameter_input.style.display = 'none';
+			parameter_input.value = 'Goal';
+		}
+	});
+
 	// Events Handlers
 	if (progress_link) {
 		progress_link.addEventListener('click', () => {
@@ -158,17 +172,4 @@ document.addEventListener('DOMContentLoaded', () => {
 			modal.classList.toggle('hidden');
 		});
 	}
-
-	parameter_label.forEach((label) => {
-		const parameter_input =
-			label.parentElement.querySelector('.parameter-input');
-		if (
-			(label && label.dataset.category === 'Water_Intake') ||
-			(label && label.dataset.category === 'Sleep')
-		) {
-			label.style.display = 'none';
-			parameter_input.style.display = 'none';
-			parameter_input.value = 'Goal';
-		}
-	});
 });
