@@ -1,13 +1,22 @@
-{% extends 'base.html' %} {% block title %}
+{% extends 'base.html' %} 
+
+{% block title %}
 <title>Sign Up</title>
-{% endblock title %} {% block content %} {% include 'navbar.html' %}
+{% endblock title %} 
+
+{% block content %} 
+
+{% include 'navbar.html' %}
 
 <div class="container">
 	<form class="form" action="" method="post" enctype="multipart/form-data">
-		{% include 'alerts.html' %} {% csrf_token %}
+		{% include 'alerts.html' %}
+		{% csrf_token %}
 		<h3 class="form-title">Sign Up</h3>
 		{{form}}
 		<input class="btn form-btn" type="submit" value="Sign Up" />
 	</form>
 </div>
-{% include 'white-footer.html' %} {% endblock content %}
+{% include 'white-footer.html' %} 
+
+{% endblock content %}

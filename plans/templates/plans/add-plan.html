@@ -1,11 +1,18 @@
-{% extends 'base.html' %} {% block title %}
+{% extends 'base.html' %} 
+
+{% block title %}
 <title>Add Goal</title>
-{% endblock %} {% block content %} {% include 'navbar.html' %}
+{% endblock %} 
+
+{% block content %} 
+
+{% include 'navbar.html' %}
 
 <div class="container">
 	<form class="form" action="" method="post">
-		{% include 'alerts.html' %} {% csrf_token %} {% if category == 'Nutrition'
-		%}
+		{% include 'alerts.html' %} 
+		{% csrf_token %}
+		{% if category == 'Nutrition' %}
 		<h3 class="form-title">Nutrition Goal</h3>
 		{% elif category == 'Water_Intake' %}
 		<h3 class="form-title">Water Intake Goal</h3>
@@ -45,7 +52,9 @@
 			data-category="{{category}}"
 			>Goal</label
 		>
-		{% endif %} {{form.parameter}}
+		{% endif %}
+		
+		{{form.parameter}}
 
 		<label for="id_goal">Amount</label>
 		{{form.goal}}
@@ -62,4 +71,6 @@
 		</div>
 	</form>
 </div>
-{% include 'white-footer.html' %} {% endblock %}
+{% include 'white-footer.html' %} 
+
+{% endblock %}
