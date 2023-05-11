@@ -719,6 +719,7 @@ p {
 .wrapper .data-box .content .card-content .weekly-content .chart {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 .wrapper .data-box .content .card-content .weekly-content .chart-percentage {
   font-size: 0.7rem;
