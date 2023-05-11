@@ -542,6 +542,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: #3f0071;
 }
 @media screen and (max-width: 1200px) {
