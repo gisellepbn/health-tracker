@@ -3,9 +3,8 @@
 {% endblock title %} {% block content %} {% include 'navbar.html' %}
 
 <div class="container">
-	{% include 'alerts.html' %}
 	<form class="form" action="" method="post">
-		{% csrf_token %}
+		{% include 'alerts.html' %} {% csrf_token %}
 		<h3 class="form-title">Sign In</h3>
 		{{form.username}} {{form.password}}
 		<input class="btn form-btn" type="submit" value="Log In" />

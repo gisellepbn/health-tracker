@@ -3,9 +3,9 @@
 {% endblock %} {% block content %} {% include 'navbar.html' %}
 
 <div class="container">
-	{% include 'alerts.html' %}
 	<form class="form" action="" method="post">
-		{% csrf_token %} {% if category == 'Nutrition' %}
+		{% include 'alerts.html' %} {% csrf_token %} {% if category == 'Nutrition'
+		%}
 		<h3 class="form-title">Nutrition Goal</h3>
 		{% elif category == 'Water_Intake' %}
 		<h3 class="form-title">Water Intake Goal</h3>
