@@ -159,9 +159,13 @@ msgstr ""
 
 #: .\plans\templates\plans\index.html:20
 #: .\plans\templates\plans\sign-up.html:4
-#: .\plans\templates\plans\sign-up.html:15
 #: .\plans\templates\plans\sign-up.html:17 .\templates\navbar.html:26
 msgid "Sign Up"
+msgstr "Crear Cuenta"
+
+
+#: .\plans\templates\plans\sign-up.html:15
+msgid "Register"
 msgstr "Registrarse"
 
 #: .\plans\templates\plans\plan.html:17 .\templates\sidebar.html:17
@@ -226,13 +230,11 @@ msgstr "semana que terminan el"
 #: .\plans\templates\plans\sign-in.html:4
 #: .\plans\templates\plans\sign-in.html:15 .\templates\navbar.html:21
 msgid "Sign In"
-msgstr "Conectarse"
+msgstr "Iniciar Sesión"
 
 #: .\plans\templates\plans\sign-in.html:18
-#, fuzzy
-#| msgid "Log Out"
 msgid "Log In"
-msgstr "Desconectarse"
+msgstr "Iniciar"
 
 #: .\templates\modal.html:6
 msgid "Confirm"
@@ -240,7 +242,7 @@ msgstr "Confirmar"
 
 #: .\templates\navbar.html:13
 msgid "Log Out"
-msgstr "Desconectarse"
+msgstr "Cerrar Sesión"
 
 #: .\templates\navbar.html:38
 msgid "Language"
@@ -250,7 +252,3 @@ msgstr "Idioma"
 msgid "Edit"
 msgstr "Editar"
 
-
-#: .\templates\sign-up.html:17
-msgid "Log In"
-msgstr "Conectarse"
