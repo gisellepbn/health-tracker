@@ -1,3 +1,4 @@
+{% load i18n %}
 <div class="sidebar">
 	<div class="profile-box">
 		<div class="profile-picture">
@@ -7,21 +8,21 @@
 		<p class="profile-username">{{request.user.username}}</p>
 		<a class="profile-edit" href="{% url 'edit_profile' %}"
 			><i class="fa-solid fa-pen-to-square"></i>
-			<span class="sidebar-text">Edit</span></a
+			<span class="sidebar-text">{% trans 'Edit' %}</span></a
 		>
 	</div>
 	<div class="sidebar-links">
 		<a id="progress-link" class="sidebar-link"
 			><i class="fa-solid fa-calendar-day"></i>
-			<span class="sidebar-text">Daily Progress</span></a
+			<span class="sidebar-text">{% trans 'Daily Progress' %}</span></a
 		>
 		<a id="goals-link" class="sidebar-link"
 			><i class="fa-solid fa-bullseye"></i>
-			<span class="sidebar-text">Daily Goals</span></a
+			<span class="sidebar-text">{% trans 'Daily Goals' %}</span></a
 		>
 		<a id="weekly-link" class="sidebar-link"
 			><i class="fa-solid fa-calendar-days"></i>
-			<span class="sidebar-text">Weekly Progress</span></a
+			<span class="sidebar-text">{% trans 'Weekly Progress' %}</span></a
 		>
 	</div>
 </div>

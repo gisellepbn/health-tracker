@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
-
+{% load i18n %}
 {% block title %}
-<title>Sign Up</title>
+<title>{% trans 'Sign Up' %}</title>
 {% endblock title %} 
 
 {% block content %} 
@@ -12,9 +12,9 @@
 	<form class="form" action="" method="post" enctype="multipart/form-data">
 		{% include 'alerts.html' %}
 		{% csrf_token %}
-		<h3 class="form-title">Sign Up</h3>
+		<h3 class="form-title">{% trans 'Sign Up' %}</h3>
 		{{form}}
-		<input class="btn form-btn" type="submit" value="Sign Up" />
+		<input class="btn form-btn" type="submit" value="{% trans 'Sign Up' %}" />
 	</form>
 </div>
 {% include 'white-footer.html' %} 

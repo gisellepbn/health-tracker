@@ -1,0 +1,359 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-11 22:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\plans\templates\plans\add-plan.html:4
+#: .\plans\templates\plans\plan.html:289 .\plans\templates\plans\plan.html:323
+#: .\plans\templates\plans\plan.html:357 .\plans\templates\plans\plan.html:388
+msgid "Add Goal"
+msgstr ""
+
+#: .\plans\templates\plans\add-plan.html:16
+#: .\plans\templates\plans\edit-goal.html:15
+msgid "Nutrition Goal"
+msgstr ""
+
+#: .\plans\templates\plans\add-plan.html:18
+#: .\plans\templates\plans\edit-goal.html:17
+msgid "Water Intake Goal"
+msgstr ""
+
+#: .\plans\templates\plans\add-plan.html:20
+#: .\plans\templates\plans\edit-goal.html:19
+msgid "Exercise Goal"
+msgstr ""
+
+#: .\plans\templates\plans\add-plan.html:22
+#: .\plans\templates\plans\edit-goal.html:21
+msgid "Sleep Goal"
+msgstr ""
+
+#: .\plans\templates\plans\add-plan.html:32
+#: .\plans\templates\plans\edit-goal.html:31
+#: .\plans\templates\plans\edit-progress.html:33
+msgid "Intake"
+msgstr ""
+
+#: .\plans\templates\plans\add-plan.html:39
+#: .\plans\templates\plans\add-plan.html:52
+#: .\plans\templates\plans\edit-goal.html:38
+#: .\plans\templates\plans\edit-goal.html:52
+#: .\plans\templates\plans\edit-progress.html:40
+#: .\plans\templates\plans\edit-progress.html:54
+msgid "Goal"
+msgstr ""
+
+#: .\plans\templates\plans\add-plan.html:46
+#: .\plans\templates\plans\edit-goal.html:45
+#: .\plans\templates\plans\edit-progress.html:47
+#, fuzzy
+#| msgid "Actividad"
+msgid "Activity"
+msgstr "Activity"
+
+#: .\plans\templates\plans\add-plan.html:57
+#: .\plans\templates\plans\edit-goal.html:58
+#: .\plans\templates\plans\edit-progress.html:60
+msgid "Amount"
+msgstr ""
+
+#: .\plans\templates\plans\add-plan.html:59
+#: .\plans\templates\plans\edit-goal.html:60
+#: .\plans\templates\plans\edit-progress.html:62
+msgid "Unit"
+msgstr ""
+
+#: .\plans\templates\plans\add-plan.html:64
+msgid "Save"
+msgstr ""
+
+#: .\plans\templates\plans\add-plan.html:65
+#: .\plans\templates\plans\edit-goal.html:71
+#: .\plans\templates\plans\edit-profile.html:28
+#: .\plans\templates\plans\edit-progress.html:73
+#, fuzzy
+#| msgid "Cancelar"
+msgid "Cancel"
+msgstr "Cancel"
+
+#: .\plans\templates\plans\edit-goal.html:4
+#, fuzzy
+#| msgid "Editar"
+msgid "Edit Goal"
+msgstr "Edit"
+
+#: .\plans\templates\plans\edit-goal.html:69
+#: .\plans\templates\plans\edit-profile.html:27
+#: .\plans\templates\plans\edit-progress.html:71
+msgid "Update"
+msgstr ""
+
+#: .\plans\templates\plans\edit-goal.html:79
+msgid "Delete Goal"
+msgstr ""
+
+#: .\plans\templates\plans\edit-profile.html:4
+#: .\plans\templates\plans\edit-profile.html:15
+#, fuzzy
+#| msgid "Editar Perfil"
+msgid "Edit Profile"
+msgstr "Edit Profile"
+
+#: .\plans\templates\plans\edit-profile.html:19
+msgid "Profile Picture"
+msgstr ""
+
+#: .\plans\templates\plans\edit-profile.html:31
+msgid "Delete Profile"
+msgstr ""
+
+#: .\plans\templates\plans\edit-progress.html:4
+#, fuzzy
+#| msgid "Editar Progreso"
+msgid "Edit Progress"
+msgstr "Edit Progress"
+
+#: .\plans\templates\plans\edit-progress.html:17
+#, fuzzy
+#| msgid "Editar Progreso"
+msgid "Nutrition Progress"
+msgstr "Edit Progress"
+
+#: .\plans\templates\plans\edit-progress.html:19
+msgid "Water Intake Progress"
+msgstr ""
+
+#: .\plans\templates\plans\edit-progress.html:21
+#, fuzzy
+#| msgid "Editar Progreso"
+msgid "Exercise Progress"
+msgstr "Edit Progress"
+
+#: .\plans\templates\plans\edit-progress.html:23
+msgid "Sleep Progress"
+msgstr ""
+
+#: .\plans\templates\plans\index.html:14
+#, fuzzy
+#| msgid "Monitorea Tu Salud"
+msgid "Monitor Your Health"
+msgstr "Monitor Your Health"
+
+#: .\plans\templates\plans\index.html:16
+msgid ""
+"Track your nutrition, water intake, exercise and sleep. Set daily goals! "
+"Check your weekly progress."
+msgstr ""
+
+#: .\plans\templates\plans\index.html:20
+#: .\plans\templates\plans\sign-up.html:4
+#: .\plans\templates\plans\sign-up.html:15
+#: .\plans\templates\plans\sign-up.html:17 .\templates\navbar.html:26
+msgid "Registrarse"
+msgstr "Sign Up"
+
+#: .\plans\templates\plans\plan.html:17 .\templates\sidebar.html:17
+#, fuzzy
+#| msgid "Editar Progreso"
+msgid "Daily Progress"
+msgstr "Edit Progress"
+
+#: .\plans\templates\plans\plan.html:33 .\plans\templates\plans\plan.html:284
+#: .\plans\templates\plans\plan.html:436
+#, fuzzy
+#| msgid "Nutrición"
+msgid "Nutrition"
+msgstr "Nutrition"
+
+#: .\plans\templates\plans\plan.html:73 .\plans\templates\plans\plan.html:133
+#: .\plans\templates\plans\plan.html:191 .\plans\templates\plans\plan.html:249
+msgid "No progress to show. Set daily goals for this date first."
+msgstr ""
+
+#: .\plans\templates\plans\plan.html:85 .\plans\templates\plans\plan.html:144
+#: .\plans\templates\plans\plan.html:202 .\plans\templates\plans\plan.html:258
+msgid "goal reached"
+msgstr ""
+
+#: .\plans\templates\plans\plan.html:93 .\plans\templates\plans\plan.html:318
+#: .\plans\templates\plans\plan.html:459
+msgid "Water Intake"
+msgstr ""
+
+#: .\plans\templates\plans\plan.html:152 .\plans\templates\plans\plan.html:482
+msgid "Exercise"
+msgstr ""
+
+#: .\plans\templates\plans\plan.html:210 .\plans\templates\plans\plan.html:384
+#: .\plans\templates\plans\plan.html:396 .\plans\templates\plans\plan.html:504
+msgid "Sleep"
+msgstr ""
+
+#: .\plans\templates\plans\plan.html:268 .\templates\sidebar.html:21
+msgid "Daily Goals"
+msgstr ""
+
+#: .\plans\templates\plans\plan.html:308 .\plans\templates\plans\plan.html:343
+#: .\plans\templates\plans\plan.html:376 .\plans\templates\plans\plan.html:407
+msgid "No daily goals set for this date yet."
+msgstr ""
+
+#: .\plans\templates\plans\plan.html:419 .\templates\sidebar.html:25
+msgid "Weekly Progress"
+msgstr ""
+
+#: .\plans\templates\plans\plan.html:422
+msgid "week ending on"
+msgstr ""
+
+#: .\plans\templates\plans\sign-in.html:4
+#: .\plans\templates\plans\sign-in.html:15 .\templates\navbar.html:21
+msgid "Sign In"
+msgstr ""
+
+#: .\plans\templates\plans\sign-in.html:18
+msgid "Conectarse"
+msgstr "Log In"
+
+#: .\templates\modal.html:6
+#, fuzzy
+#| msgid "Confirmar"
+msgid "Confirm"
+msgstr "Confirm"
+
+#: .\templates\navbar.html:13
+msgid "Desconectarse"
+msgstr "Log Out"
+
+#: .\templates\navbar.html:38
+msgid "Idioma"
+msgstr "Language"
+
+#: .\templates\sidebar.html:11
+#, fuzzy
+#| msgid "Editar"
+msgid "Edit"
+msgstr "Edit"
+
+#~ msgid "Nueva Meta"
+#~ msgstr "Add Goal"
+
+#~ msgid "Meta para Nutrición"
+#~ msgstr "Nutrition Goal"
+
+#~ msgid "Meta para Consumo Agua"
+#~ msgstr "Water Intake Goal"
+
+#~ msgid "Meta para Ejercicio Físico"
+#~ msgstr "Exercise Goal"
+
+#~ msgid "Meta para Horas de Sueño"
+#~ msgstr "Sleep Goal"
+
+#~ msgid "Parámetro"
+#~ msgstr "Intake"
+
+#~ msgid "Meta"
+#~ msgstr "Goal"
+
+#~ msgid "Cantidad"
+#~ msgstr "Amount"
+
+#~ msgid "Unidad de Medida"
+#~ msgstr "Unit"
+
+#~ msgid "Guardar"
+#~ msgstr "Save"
+
+#~ msgid "Editar Meta"
+#~ msgstr "Edit Goal"
+
+#~ msgid "Actualizar"
+#~ msgstr "Update"
+
+#~ msgid "Eliminar Meta"
+#~ msgstr "Delete Goal"
+
+#~ msgid "Foto de Perfil"
+#~ msgstr "Profile Picture"
+
+#~ msgid "Eliminar Perfil"
+#~ msgstr "Delete Profile"
+
+#~ msgid "Progreso en Nutrición"
+#~ msgstr "Nutrition Progress"
+
+#~ msgid "Progreso en Consumo de Agua"
+#~ msgstr "Water Intake Progress"
+
+#~ msgid "Progreso en Ejercicio Físico"
+#~ msgstr "Exercise Progress"
+
+#~ msgid "Progreso en Horas de Sueño"
+#~ msgstr "Sleep Progress"
+
+#~ msgid ""
+#~ "Toma nota de tu nutrición, cantidad de agua que tomas, ejercicio físico y "
+#~ "horas de sueño. ¡Ponte metas diarias! Comprueba tu progreso semanal."
+#~ msgstr ""
+#~ "Track your nutrition, water intake, exercise and sleep. Set daily goals! "
+#~ "Check your weekly progress."
+
+#~ msgid "Registrarse"
+#~ msgstr "Sign Up"
+
+#~ msgid "Progreso Diario"
+#~ msgstr "Daily Progress"
+
+#~ msgid ""
+#~ "Nada para mostrar. Primero debes establecer metas diarias para esta fecha."
+#~ msgstr "No progress to show. Set daily goals for this date first."
+
+#~ msgid "alcanzado"
+#~ msgstr "goal reached"
+
+#~ msgid "Consumo de Agua"
+#~ msgstr "Water Intake"
+
+#~ msgid "Ejercicio Físico"
+#~ msgstr "Exercise"
+
+#~ msgid "Horas de Sueño"
+#~ msgstr "Sleep"
+
+#~ msgid "Metas Diarias"
+#~ msgstr "Daily Goals"
+
+#~ msgid "No hay metas diarias para esta fecha todavía."
+#~ msgstr "No daily goals set for this date yet."
+
+#~ msgid "Progreso Semanal"
+#~ msgstr "Weekly Progress"
+
+#~ msgid "semana que terminan el"
+#~ msgstr "week ending on"
+
+#~ msgid "Conectarse"
+#~ msgstr "Sign In"
+
+#~ msgid "Desconectarse"
+#~ msgstr "Log Out"
+
+#~ msgid "Idioma"
+#~ msgstr "Language"

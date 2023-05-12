@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
-
+{% load i18n %}
 {% block title %}
-<title>Edit Profile</title>
+<title>{% trans 'Edit Profile' %}</title>
 {% endblock %}
 
 {% block content %}
@@ -12,11 +12,11 @@
 	<form class="form" action="" method="post" enctype="multipart/form-data">
 		{% include 'alerts.html' %} 
 		{% csrf_token %}
-		<h3 class="form-title">Edit Profile</h3>
+		<h3 class="form-title">{% trans 'Edit Profile' %}</h3>
 		{{form.name}}
 		{{form.username}}
 		{{form.password}}
-		<label id="picture-label" for="profile_picture">Profile Picture</label>
+		<label id="picture-label" for="profile_picture">{% trans 'Profile Picture' %}</label>
 		{{form.picture}}
 		<div class="cta-group">
 			<div class="cta-box">
@@ -24,11 +24,11 @@
 					class="btn update-btn"
 					type="submit"
 					name="update"
-					value="Update" />
-				<a href="{% url 'cancel' %}" class="btn cancel-btn">Cancel</a>
+					value="{% trans 'Update' %}" />
+				<a href="{% url 'cancel' %}" class="btn cancel-btn">{% trans 'Cancel' %}</a>
 			</div>
 
-			<a id="delete-profile" class="delete-btn" href="" title="Delete Profile"
+			<a id="delete-profile" class="delete-btn" href="" title="{% trans 'Delete Profile' %}"
 				><i class="fa-solid fa-trash-can"></i
 			></a>
 		</div>

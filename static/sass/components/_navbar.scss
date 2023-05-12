@@ -20,40 +20,103 @@
 		}
 	}
 
-	&__items {
+	&__menu {
 		display: flex;
-		gap: $small;
+		gap: 1rem;
 
-		#sign-in {
-			color: $light-gray;
-			&:hover {
-				color: $pink;
-				text-decoration: underline;
-			}
-		}
+		.navbar__items {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: $small;
 
-		#sign-up {
-			color: $pink;
-
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-
-		#log-out {
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-
-		@media screen and (max-width: 750px) {
 			#sign-in {
-				font-size: 0.8rem;
-				padding-right: 0;
+				color: $light-gray;
+				&:hover {
+					color: $pink;
+					text-decoration: underline;
+				}
 			}
+
 			#sign-up {
-				display: none;
+				color: $pink;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			#log-out {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			@media screen and (max-width: 750px) {
+				#sign-in {
+					font-size: 0.8rem;
+					padding-right: 0;
+				}
+				#sign-up {
+					display: none;
+				}
 			}
 		}
+
+		.dropdown {
+			position: relative;
+			display: block;
+			gap: 0.5rem;
+
+			&-icon {
+				color: $light-gray;
+
+				@media screen and (max-width: 750px) {
+					font-size: 0.8rem;
+				}
+			}
+
+			&-title {
+				@media screen and (max-width: 750px) {
+					display: none;
+				}
+			}
+
+			&-content {
+				position: absolute;
+				margin-top: 0.5rem;
+				display: flex;
+				flex-direction: column;
+				border-radius: 0 0 $border-radius $border-radius;
+				z-index: 9;
+
+				.language-link {
+					padding: 0.5rem 1rem;
+					background-color: $pink;
+					color: $light-gray;
+					font-size: $small;
+
+					&:last-child {
+						border-top: 0.5px solid $light-gray;
+						border-radius: 0 0 $border-radius $border-radius;
+					}
+
+					&:hover {
+						background-color: $purple;
+					}
+				}
+
+				@media screen and (max-width: 750px) {
+					.language-link {
+						font-size: 0.8rem;
+					}
+					right: 0;
+				}
+			}
+		}
+	}
+
+	.hide {
+		display: none;
 	}
 }

@@ -1,6 +1,6 @@
 {% extends 'base.html' %} 
 {% load static %}
-
+{% load i18n %}
 {% block title %}
 <title>Plan</title>
 {% endblock title %}
@@ -14,7 +14,7 @@
 	<div id="daily-progress" class="data-box">
 		<div class="header">
 			<h3 class="header-title">
-				<i class="fa-solid fa-bullseye"></i> Daily Progress
+				<i class="fa-solid fa-bullseye"></i> {% trans 'Daily Progress' %}
 			</h3>
 			<div class="date-container">
 				<input
@@ -30,7 +30,7 @@
 			<div class="progress-card">
 				<div class="progress-card-header">
 					<p class="progress-card-title">
-						<i class="fa-solid fa-plate-wheat"></i> Nutrition
+						<i class="fa-solid fa-plate-wheat"></i> {% trans 'Nutrition' %}
 					</p>
 				</div>
 				<div class="progress-card-body">
@@ -70,7 +70,7 @@
 							<tbody>
 								<tr>
 									<td class="empty">
-										No progress to show. Set daily goals for this date first.
+										{% trans 'No progress to show. Set daily goals for this date first.' %}
 									</td>
 								</tr>
 							</tbody>
@@ -82,7 +82,7 @@
 						<p class="percent-number">
 							{{nutrition_percentage|floatformat:'0'}}%
 						</p>
-						<p class="percent-label">goal reached</p>
+						<p class="percent-label">{% trans 'goal reached' %}</p>
 					</div>
 				</div>
 			</div>
@@ -90,7 +90,7 @@
 			<div class="progress-card">
 				<div class="progress-card-header">
 					<p class="progress-card-title">
-						<i class="fa-solid fa-bottle-water"></i> Water Intake
+						<i class="fa-solid fa-bottle-water"></i> {% trans 'Water Intake' %}
 					</p>
 				</div>
 				<div class="progress-card-body">
@@ -130,7 +130,7 @@
 							<tbody>
 								<tr>
 									<td class="empty">
-										No progress to show. Set daily goals for this date first.
+										{% trans 'No progress to show. Set daily goals for this date first.' %}
 									</td>
 								</tr>
 							</tbody>
@@ -141,7 +141,7 @@
 						<p class="percent-number">
 							{{water_intake_percentage|floatformat:'0'}}%
 						</p>
-						<p class="percent-label">goal reached</p>
+						<p class="percent-label">{% trans 'goal reached' %}</p>
 					</div>
 				</div>
 			</div>
@@ -149,7 +149,7 @@
 			<div class="progress-card">
 				<div class="progress-card-header">
 					<p class="progress-card-title">
-						<i class="fa-solid fa-person-running"></i> Exercise
+						<i class="fa-solid fa-person-running"></i> {% trans 'Exercise' %}
 					</p>
 				</div>
 				<div class="progress-card-body">
@@ -188,7 +188,7 @@
 							<tbody>
 								<tr>
 									<td class="empty">
-										No progress to show. Set daily goals for this date first.
+										{% trans 'No progress to show. Set daily goals for this date first.' %}
 									</td>
 								</tr>
 							</tbody>
@@ -199,7 +199,7 @@
 						<p class="percent-number">
 							{{exercise_percentage|floatformat:'0'}}%
 						</p>
-						<p class="percent-label">goal reached</p>
+						<p class="percent-label">{% trans 'goal reached' %}</p>
 					</div>
 				</div>
 			</div>
@@ -207,7 +207,7 @@
 			<div class="progress-card">
 				<div class="progress-card-header">
 					<p class="progress-card-title">
-						<i class="fa-solid fa-bed"></i> Sleep
+						<i class="fa-solid fa-bed"></i> {% trans 'Sleep' %}
 					</p>
 				</div>
 				<div class="progress-card-body">
@@ -246,7 +246,7 @@
 							<tbody>
 								<tr>
 									<td class="empty">
-										No progress to show. Set daily goals for this date first.
+										{% trans 'No progress to show. Set daily goals for this date first.' %}
 									</td>
 								</tr>
 							</tbody>
@@ -255,7 +255,7 @@
 					</div>
 					<div class="progress-percent">
 						<p class="percent-number">{{sleep_percentage|floatformat:'0'}}%</p>
-						<p class="percent-label">goal reached</p>
+						<p class="percent-label">{% trans 'goal reached' %}</p>
 					</div>
 				</div>
 			</div>
@@ -265,7 +265,7 @@
 	<div id="daily-goals" class="data-box">
 		<div class="header">
 			<h3 class="header-title">
-				<i class="fa-solid fa-bullseye"></i> Daily Goals
+				<i class="fa-solid fa-bullseye"></i> {% trans 'Daily Goals' %}
 			</h3>
 			<div class="date-container">
 				<input
@@ -281,12 +281,12 @@
 			<div class="card">
 				<div class="card-header">
 					<p class="card-title">
-						<i class="fa-solid fa-plate-wheat"></i> Nutrition
+						<i class="fa-solid fa-plate-wheat"></i> {% trans 'Nutrition' %}
 					</p>
 					<a
 						href="{% url 'add_plan' 'Nutrition' date %}"
 						class="add-btn"
-						title="Add Goal"
+						title="{% trans 'Add Goal' %}"
 						><i class="fa-solid fa-plus"></i
 					></a>
 				</div>
@@ -305,7 +305,7 @@
 						</tr>
 						{% empty %}
 						<tr>
-							<td class="empty">- No daily goals set for this date yet.</td>
+							<td class="empty">- {% trans 'No daily goals set for this date yet.' %}</td>
 						</tr>
 
 						{% endfor %}
@@ -315,12 +315,12 @@
 			<div class="card">
 				<div class="card-header">
 					<p class="card-title">
-						<i class="fa-solid fa-bottle-water"></i> Water Intake
+						<i class="fa-solid fa-bottle-water"></i> {% trans 'Water Intake' %}
 					</p>
 					<a
 						href="{% url 'add_plan' 'Water_Intake' date %}"
 						class="add-btn"
-						title="Add Goal"
+						title="{% trans 'Add Goal' %}"
 						><i class="fa-solid fa-plus"></i
 					></a>
 				</div>
@@ -340,7 +340,7 @@
 
 						{% empty %}
 						<tr>
-							<td class="empty">- No daily goals set for this date yet.</td>
+							<td class="empty">- {% trans 'No daily goals set for this date yet.' %}</td>
 						</tr>
 						{% endfor %}
 					</table>
@@ -354,7 +354,7 @@
 					<a
 						href="{% url 'add_plan' 'Exercise' date %}"
 						class="add-btn"
-						title="Add Goal"
+						title="{% trans 'Add Goal' %}"
 						><i class="fa-solid fa-plus"></i
 					></a>
 				</div>
@@ -373,7 +373,7 @@
 						</tr>
 						{% empty %}
 						<tr>
-							<td class="empty">- No daily goals set for this date yet.</td>
+							<td class="empty">- {% trans 'No daily goals set for this date yet.' %}</td>
 						</tr>
 						{% endfor %}
 					</table>
@@ -381,11 +381,11 @@
 			</div>
 			<div class="card">
 				<div class="card-header">
-					<p class="card-title"><i class="fa-solid fa-bed"></i> Sleep</p>
+					<p class="card-title"><i class="fa-solid fa-bed"></i> {% trans 'Sleep' %}</p>
 					<a
 						href="{% url 'add_plan' 'Sleep' date %}"
 						class="add-btn"
-						title="Add Goal"
+						title="{% trans 'Add Goal' %}"
 						><i class="fa-solid fa-plus"></i
 					></a>
 				</div>
@@ -393,7 +393,7 @@
 					<table>
 						{% for plan in sleep_plan %}
 						<tr>
-							<td class="parameter">Sleep</td>
+							<td class="parameter">{% trans 'Sleep' %}</td>
 							<td class="goal">{{plan.goal|floatformat:"-2"}}</td>
 							<td class="unit">{{plan.unit}}</td>
 							<td class="edit">
@@ -404,7 +404,7 @@
 						</tr>
 						{% empty %}
 						<tr>
-							<td class="empty">- No daily goals set for this date yet.</td>
+							<td class="empty">- {% trans 'No daily goals set for this date yet.' %}</td>
 						</tr>
 						{% endfor %}
 					</table>
@@ -416,10 +416,10 @@
 	<div id="weekly-progress" class="data-box">
 		<div class="header">
 			<h3 class="header-title">
-				<i class="fa-solid fa-bullseye"></i> Weekly Progress
+				<i class="fa-solid fa-bullseye"></i> {% trans 'Weekly Progress' %}
 			</h3>
 			<div class="date-container">
-				<p id="header-subtitle">week ending on</p>
+				<p id="header-subtitle">{% trans 'week ending on' %}</p>
 				<input
 					id="weekly-date"
 					class="header-date"
@@ -433,7 +433,7 @@
 			<div class="card">
 				<div class="card-header">
 					<p class="card-title">
-						<i class="fa-solid fa-plate-wheat"></i> Nutrition
+						<i class="fa-solid fa-plate-wheat"></i> {% trans 'Nutrition' %}
 					</p>
 				</div>
 				<div class="card-content">
@@ -456,7 +456,7 @@
 			<div class="card">
 				<div class="card-header">
 					<p class="card-title">
-						<i class="fa-solid fa-bottle-water"></i> Water Intake
+						<i class="fa-solid fa-bottle-water"></i> {% trans 'Water Intake' %}
 					</p>
 				</div>
 				<div class="card-content">
@@ -479,7 +479,7 @@
 			<div class="card">
 				<div class="card-header">
 					<p class="card-title">
-						<i class="fa-solid fa-person-running"></i> Exercise
+						<i class="fa-solid fa-person-running"></i> {% trans 'Exercise' %}
 					</p>
 				</div>
 				<div class="card-content">
@@ -501,7 +501,7 @@
 			</div>
 			<div class="card">
 				<div class="card-header">
-					<p class="card-title"><i class="fa-solid fa-bed"></i> Sleep</p>
+					<p class="card-title"><i class="fa-solid fa-bed"></i> {% trans 'Sleep' %}</p>
 				</div>
 				<div class="card-content">
 					<div class="weekly-content">

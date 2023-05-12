@@ -1,16 +1,24 @@
-{% extends 'base.html' %} {% load static %} {% block title %}
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %}
 <title>Health Tracker</title>
-{% endblock title %} {% block content %} {% include 'navbar.html' %}
+{% endblock title %}
+
+{% block content %} 
+
+{% include 'navbar.html' %}
 <main>
 	<div class="hero-section">
 		<div class="hero-section__text">
-			<h1 class="hero__title">Monitor Your Health</h1>
+			<h1 class="hero__title">{% trans 'Monitor Your Health' %}</h1>
 			<p class="hero__subtitle">
-				Track your nutrition, water intake, exercise and sleep. Set daily goals!
-				Check your weekly progress.
+				{% trans "Track your nutrition, water intake, exercise and sleep. Set daily goals! Check your weekly progress." %}
 			</p>
+			
 
-			<a id="cta-btn" class="btn" href="{% url 'sign_up' %}">Sign Up</a>
+			<a id="cta-btn" class="btn" href="{% url 'sign_up' %}">{% trans 'Sign Up' %}</a>
+			
 		</div>
 
 		<div class="hero-section__image">
@@ -23,4 +31,5 @@
 		</div>
 	</div>
 </main>
-{% include 'purple-footer.html' %} {% endblock content %}
+{% include 'purple-footer.html' %} 
+{% endblock content %}

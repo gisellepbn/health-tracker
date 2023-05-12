@@ -7,19 +7,36 @@ from .models import Plan
 from .utils import plans_per_date, percentage_per_category, weekly_progress
 from django.contrib.auth.hashers import make_password
 from django.db import IntegrityError
-import os
 from datetime import date
 from django.http import JsonResponse
-import json
+from django.utils.translation import gettext as _
+from django.utils.translation import get_language, activate, gettext
 
 
 
 def index(request):
 
+    # trans = translate(language='en')
+
     if request.user.is_authenticated:
         return redirect('plan', 'goals', date.today())
     else:
-        return render(request, 'plans/index.html')
+        return render(request, 'plans/index.html', {
+    
+        })
+
+
+# def translate(language):
+#     cur_language = get_language()
+
+#     try:
+#         activate(language)
+#         text = gettext('hola')
+#     finally:
+#         activate(cur_language)
+
+#     return text
+
 
 
 def sign_up(request):

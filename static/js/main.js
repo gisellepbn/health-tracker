@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const parameter_label = document.querySelectorAll('.parameter-label');
 
+	// Language Menu
+	const dropdown_icon = document.querySelector('.dropdown-icon');
+	const dropdown_content = document.querySelector('.dropdown-content');
+
 	// Functions
 	const progress_toggle = () => {
 		daily_progress.style.display = 'flex';
@@ -175,6 +179,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		modal_close.addEventListener('click', (event) => {
 			event.preventDefault();
 			modal.classList.toggle('hidden');
+		});
+	}
+
+	if (dropdown_icon) {
+		dropdown_icon.addEventListener('click', (event) => {
+			event.preventDefault();
+			dropdown_content.classList.toggle('hide');
 		});
 	}
 });

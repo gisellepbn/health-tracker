@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
-
+{% load i18n %}
 {% block title %}
-<title>Edit Progress</title>
+<title>{% trans 'Edit Progress' %}</title>
 {% endblock %}
 
 {% block content %} 
@@ -10,15 +10,17 @@
 
 <div class="container">
 	<form class="form" action="" method="post">
-		{% include 'alerts.html' %} {% csrf_token %} {% if category == 'Nutrition'
-		%}
-		<h3 class="form-title">Nutrition Progress</h3>
+		{% include 'alerts.html' %} 
+		{% csrf_token %} 
+		
+		{% if category == 'Nutrition' %}
+		<h3 class="form-title">{% trans 'Nutrition Progress' %}</h3>
 		{% elif category == 'Water_Intake' %}
-		<h3 class="form-title">Water Intake Progress</h3>
+		<h3 class="form-title">{% trans 'Water Intake Progress' %}</h3>
 		{% elif category == 'Exercise' %}
-		<h3 class="form-title">Exercise Progress</h3>
+		<h3 class="form-title">{% trans 'Exercise Progress' %}</h3>
 		{% else %}
-		<h3 class="form-title">Sleep Progress</h3>
+		<h3 class="form-title">{% trans 'Sleep Progress' %}</h3>
 		{% endif %}
 
 		<label class="date-label">{{date}}</label>
@@ -28,34 +30,36 @@
 			class="parameter-label"
 			for="id_parameter"
 			data-category="{{category}}"
-			>Intake</label
+			>{% trans 'Intake' %}</label
 		>
 		{% elif category == 'Water_Intake' %}
 		<label
 			class="parameter-label"
 			for="id_parameter"
 			data-category="{{category}}"
-			>Goal</label
+			>{% trans 'Goal' %}</label
 		>
 		{% elif category == 'Exercise' %}
 		<label
 			class="parameter-label"
 			for="id_parameter"
 			data-category="{{category}}"
-			>Activity</label
+			>{% trans 'Activity' %}</label
 		>
 		{% else %}
 		<label
 			class="parameter-label"
 			for="id_parameter"
 			data-category="{{category}}"
-			>Goal</label
+			>{% trans 'Goal' %}</label
 		>
-		{% endif %} {{form.parameter}}
+		{% endif %} 
+		
+		{{form.parameter}}
 
-		<label for="id_goal">Amount</label>
+		<label for="id_goal">{% trans 'Amount' %}</label>
 		{{form.progress}}
-		<label for="id_unit">Unit</label>
+		<label for="id_unit">{% trans 'Unit' %}</label>
 		{{form.unit}}
 
 		<div class="cta-group">
@@ -64,12 +68,14 @@
 					class="btn update-btn"
 					type="submit"
 					name="update"
-					value="Update" />
+					value="{% trans 'Update' %}" />
 				<a href="{% url 'cancel' 'progress' date %}" class="btn cancel-btn"
-					>Cancel</a
+					>{% trans 'Cancel' %}</a
 				>
 			</div>
 		</div>
 	</form>
 </div>
-{% include 'white-footer.html' %} {% endblock %}
+{% include 'white-footer.html' %} 
+
+{% endblock %}

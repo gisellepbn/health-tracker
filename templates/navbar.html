@@ -1,3 +1,4 @@
+{% load i18n %}
 <nav class="navbar">
 	{% if request.user.is_authenticated %}
 	<a class="logo">HealthTracker</a>
@@ -9,21 +10,40 @@
 			{% if request.user.is_authenticated %}
 			<li class="navbar__item">
 				<a href="{% url 'log_out' %}" id="log-out" class="navbar__link"
-					>Log Out</a
+					>{% trans 'Log Out' %}</a
 				>
 			</li>
+
 			{% else %}
+			
 			<li class="navbar__item">
 				<a href="{% url 'sign_in' %}" id="sign-in" class="navbar__link"
-					>Sign In</a
+					>{% trans 'Sign In' %}</a
 				>
 			</li>
 			<li class="navbar__item">
 				<a href="{% url 'sign_up' %}" id="sign-up" class="navbar__link"
-					>Sign Up</a
+					>{% trans 'Sign Up' %}</a
+					></a
 				>
-			</li>
-			{% endif %}
-		</ul>
+			</li>						
+			
+		</ul>	
+		
+		{% get_current_language as LANGUAGE_CODE %}
+		{% get_available_languages as LANGUAGES %}
+		{% get_language_info_list for LANGUAGES as languages%}
+
+		<div class="dropdown">
+			<a class="dropdown-icon"><i class="fa-solid fa-globe"></i> <span class="dropdown-title">{% trans 'Language' %}</span></a>
+			<div class="dropdown-content hide">
+				{% for language in languages %}
+				<a class="language-link" href="/{{language.code}}/">{{language.name_local|capfirst}}</a>
+				{% endfor %}
+			</div>
+		</div>
+
+		{% endif %}
 	</div>
+	
 </nav>

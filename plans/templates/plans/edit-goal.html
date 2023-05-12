@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
-
+{% load i18n %}
 {% block title %}
-<title>Edit Goal</title>
+<title>{% trans 'Edit Goal' %}</title>
 {% endblock %}
 {% block content %} 
 
@@ -12,13 +12,13 @@
 		{% include 'alerts.html' %} 
 		{% csrf_token %} 
 		{% if category == 'Nutrition' %}
-		<h3 class="form-title">Nutrition Goal</h3>
+		<h3 class="form-title">{% trans 'Nutrition Goal' %}</h3>
 		{% elif category == 'Water_Intake' %}
-		<h3 class="form-title">Water Intake Goal</h3>
+		<h3 class="form-title">{% trans 'Water Intake Goal' %}</h3>
 		{% elif category == 'Exercise' %}
-		<h3 class="form-title">Exercise Goal</h3>
+		<h3 class="form-title">{% trans 'Exercise Goal' %}</h3>
 		{% else %}
-		<h3 class="form-title">Sleep Goal</h3>
+		<h3 class="form-title">{% trans 'Sleep Goal' %}</h3>
 		{% endif %}
 
 		<label class="date-label">{{date}}</label>
@@ -28,36 +28,36 @@
 			class="parameter-label"
 			for="id_parameter"
 			data-category="{{category}}"
-			>Intake</label
+			>{% trans 'Intake' %}</label
 		>
 		{% elif category == 'Water_Intake' %}
 		<label
 			class="parameter-label"
 			for="id_parameter"
 			data-category="{{category}}"
-			>Goal</label
+			>{% trans 'Goal' %}</label
 		>
 		{% elif category == 'Exercise' %}
 		<label
 			class="parameter-label"
 			for="id_parameter"
 			data-category="{{category}}"
-			>Activity</label
+			>{% trans 'Activity' %}</label
 		>
 		{% else %}
 		<label
 			class="parameter-label"
 			for="id_parameter"
 			data-category="{{category}}"
-			>Goal</label
+			>{% trans 'Goal' %}</label
 		>
 		{% endif %} 
 		
 		{{form.parameter}}
 
-		<label for="id_goal">Amount</label>
+		<label for="id_goal">{% trans 'Amount' %}</label>
 		{{form.goal}}
-		<label for="id_unit">Unit</label>
+		<label for="id_unit">{% trans 'Unit' %}</label>
 		{{form.unit}}
 
 		<div class="cta-group">
@@ -66,9 +66,9 @@
 					class="btn update-btn"
 					type="submit"
 					name="update"
-					value="Update" />
+					value="{% trans 'Update' %}" />
 				<a href="{% url 'cancel' 'goals' date %}" class="btn cancel-btn"
-					>Cancel</a
+					>{% trans 'Cancel' %}</a
 				>
 			</div>
 
@@ -76,7 +76,7 @@
 				id="delete-goal"
 				class="delete-btn"
 				href="{% url 'delete_plan' plan %}"
-				title="Delete Goal"
+				title="{% trans 'Delete Goal' %}"
 				><i class="fa-solid fa-trash-can"></i
 			></a>
 		</div>
