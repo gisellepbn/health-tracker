@@ -30,6 +30,12 @@
 		<script src="{% static 'js/main.js' %}" difer></script>
 	</head>
 	<body>
-		<div class="grid">{% block content %} {% endblock content %}</div>
+		
+		<div class="grid">
+			
+		{% block content %} 
+		{% endblock content %}
+		{% include 'loader.html' %}
+		</div>
 	</body>
 </html>

@@ -29,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	const dropdown_icon = document.querySelector('.dropdown-icon');
 	const dropdown_content = document.querySelector('.dropdown-content');
 
+	// Loader
+	const loader_container = document.querySelector('.loader-container');
+
 	// Functions
 	const progress_toggle = () => {
 		daily_progress.style.display = 'flex';
@@ -188,4 +191,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			dropdown_content.classList.toggle('hide');
 		});
 	}
+
+	window.addEventListener('load', () => {
+		loader_container.style.display = 'none';
+	});
 });
