@@ -28,13 +28,13 @@
 		width: 100%;
 
 		.profile-picture {
-			width: 35%;
-			height: 35%;
+			min-width: 35%;
+			min-height: 35%;
 			margin-bottom: 1.5rem;
 
 			@media screen and (max-width: $breakpoint-tablet) {
-				width: 55%;
-				height: 55%;
+				min-width: 55%;
+				min-height: 55%;
 			}
 
 			img {
