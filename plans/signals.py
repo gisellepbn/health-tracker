@@ -13,7 +13,8 @@ def delete_old_profile_picture_on_update(sender, instance, **kwargs):
                 return
             else:
                 new_picture = instance.picture
-                if old_picture and old_picture.url != new_picture.url:
+
+                if old_picture and 'health-tracker-default.png' not in old_picture.url and old_picture.url != new_picture.url:
                     old_picture.delete(save=False)
 
 
@@ -21,8 +22,8 @@ def delete_old_profile_picture_on_update(sender, instance, **kwargs):
 def delete_old_profile_picture(sender, instance, **kwargs):   
     try:
         path = Profile.objects.get(id=instance.id).picture.path
-        
-        if os.path.exists(path):           
+
+        if os.path.exists(path) and 'health-tracker-default.png' not in path:           
             os.remove(path)        
     except:
         pass

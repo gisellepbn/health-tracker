@@ -390,14 +390,14 @@ p {
   width: 100%;
 }
 .sidebar .profile-box .profile-picture {
-  min-width: 35%;
-  min-height: 35%;
+  width: 35%;
+  height: 35%;
   margin-bottom: 1.5rem;
 }
 @media screen and (max-width: 960px) {
   .sidebar .profile-box .profile-picture {
-    min-width: 55%;
-    min-height: 55%;
+    width: 55%;
+    height: 55%;
   }
 }
 .sidebar .profile-box .profile-picture img {
@@ -994,6 +994,11 @@ p {
 .empty {
   color: #150050;
   padding: 0.5rem 1.5rem;
+}
+@media screen and (max-width: 480px) {
+  .empty {
+    font-size: smaller;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
