@@ -155,24 +155,26 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Content Security Policy
 
+CSP_DEFAULT_SRC = ["'self'",]
+
 CSP_IMG_SRC = ("'self'")
 
-CSP_STYLE_SRC = ("'self', 'https://fonts.googleapis.com', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'")
+CSP_STYLE_SRC = ("'self'", 'https://fonts.googleapis.com/', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css')
 
-CSP_FONT_SRC = ("'self', 'https://fonts.gstatic.com/'")
+CSP_FONT_SRC = ("'self'", 'https://fonts.gstatic.com/', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/')
 
 CSP_SCRIPT_SRC = ("'self'")
 
 
 # HTTP settings
 
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_SSL_REDIRECT = True
 
 
 # HSTS settings
 
-SECURE_HSTS_SECONDS = 31536000 # 1 year
-SECURE_HSTS_PRELOAD = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_SECONDS = 31536000 # 1 year
+# SECURE_HSTS_PRELOAD = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
