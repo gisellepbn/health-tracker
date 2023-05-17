@@ -162,3 +162,17 @@ CSP_STYLE_SRC = ("'self', 'https://fonts.googleapis.com', 'https://cdnjs.cloudfl
 CSP_FONT_SRC = ("'self', 'https://fonts.gstatic.com/'")
 
 CSP_SCRIPT_SRC = ("'self'")
+
+
+# HTTP settings
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+
+
+# HSTS settings
+
+SECURE_HSTS_SECONDS = 31536000 # 1 year
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
